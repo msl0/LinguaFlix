@@ -70,7 +70,7 @@ content.js (orchestrator)
 - Session contains: `videoId`, `playerSession`, `sessionId` (used to validate watch context)
 
 ### TTML Subtitle Detection
-- Netflix CDN URL pattern: `oca.nflxvideo.net/?o=1&...format=ttml` 
+- Netflix CDN URL pattern: `oca.nflxvideo.net/?o=` 
 - Uses `PerformanceObserver` to detect completed requests - see `subtitle-fetcher.js`
 - Re-fetches TTML from same URL to parse structure
 
