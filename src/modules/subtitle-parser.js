@@ -15,8 +15,8 @@
 // ============================================================================
 
 /**
- * Parsuje TTML XML do tablicy cue objects
- * @param {string} xmlString - XML z Netflix CDN
+ * Parse TTML XML into array of cue objects
+ * @param {string} xmlString - XML from Netflix CDN
  * @returns {{cues: Array, language: string}} - Parsed cues + language
  */
 function parseTTML(xmlString) {
@@ -95,10 +95,10 @@ function parseTTML(xmlString) {
 }
 
 /**
- * Znajduje cue dla danego timestamp
- * @param {number} timeMs - Czas w milliseconds
- * @param {Array} cues - Tablica cue objects (sorted by start)
- * @returns {Object|null} - Cue object lub null
+ * Find cue at given timestamp
+ * @param {number} timeMs - Time in milliseconds
+ * @param {Array} cues - Array of cue objects (sorted by start)
+ * @returns {Object|null} - Cue object or null
  */
 function findCueAt(timeMs, cues) {
   if (!Array.isArray(cues) || !cues.length) return null;
@@ -115,7 +115,7 @@ function findCueAt(timeMs, cues) {
 // ============================================================================
 
 /**
- * Konwertuje TTML time format (ticks) → milliseconds
+ * Convert TTML time format (ticks) → milliseconds
  * @private
  */
 function timeToMs(timeStr, tickRate = 10000000) {
@@ -133,7 +133,7 @@ function timeToMs(timeStr, tickRate = 10000000) {
 }
 
 /**
- * Ekstraktuje tekst z TTML <p>, zachowując <br/> jako \n
+ * Extract text from TTML <p>, preserving <br/> as \n
  * @private
  */
 function extractCueText(node) {
