@@ -151,18 +151,18 @@ function handleSubtitleResponse(xmlString, url) {
 /**
  * triggerOverlaySubtitleFetch(overlayTrack, currentTrack, language)
  * Triggers initial overlay subtitle fetch by switching tracks
- * 
+ *
  * @param {Object} overlayTrack - Overlay language track object from Netflix API
  * @param {Object} currentTrack - Currently active track object
  * @param {string} language - Language code (e.g., 'pl', 'en')
- * @returns {void}
- * 
+ * @returns {Promise<void>} Resolves after reverting to original track
+ *
  * How it works:
  * 1. Switch to overlay track via setTimedTextTrack()
  * 2. Netflix fetches TTML for overlay track
  * 3. PerformanceObserver catches the request
- * 4. After 500ms, revert to original track
- * 
+ * 4. After 500ms, revert to original track and resolve
+ *
  * Why this approach:
  * Netflix only fetches TTML when track is activated.
  * We need overlay TTML early so it's cached when user pauses.
@@ -170,32 +170,38 @@ function handleSubtitleResponse(xmlString, url) {
  */
 function triggerOverlaySubtitleFetch(overlayTrack, currentTrack, language = 'pl') {
   console.debug(`[LinguaFlix] triggerOverlaySubtitleFetch() called for language: ${language}`);
-  
-  if (!playerSessionRef) {
-    console.warn('[LinguaFlix] Cannot trigger fetch: player session not available');
-    return;
-  }
 
-  if (!overlayTrack) {
-    console.warn(`[LinguaFlix] Overlay track (${language}) not provided, skipping fetch`);
-    return;
-  }
+  return new Promise((resolve) => {
+    if (!playerSessionRef) {
+      console.warn('[LinguaFlix] Cannot trigger fetch: player session not available');
+      resolve();
+      return;
+    }
 
-  try {
-    // Switch to overlay track to trigger TTML fetch
-    console.log(`[LinguaFlix] Switching to ${language} track to trigger TTML fetch`);
-    playerSessionRef.setTimedTextTrack(overlayTrack);
+    if (!overlayTrack) {
+      console.warn(`[LinguaFlix] Overlay track (${language}) not provided, skipping fetch`);
+      resolve();
+      return;
+    }
 
-    // Revert to original track after short delay
-    setTimeout(() => {
-      if (currentTrack) {
-        playerSessionRef.setTimedTextTrack(currentTrack);
-        console.log('[LinguaFlix] Reverted to original subtitle track');
-      }
-    }, 500);
-  } catch (err) {
-    console.error('[LinguaFlix] Error triggering overlay subtitle fetch:', err);
-  }
+    try {
+      // Switch to overlay track to trigger TTML fetch
+      console.log(`[LinguaFlix] Switching to ${language} track to trigger TTML fetch`);
+      playerSessionRef.setTimedTextTrack(overlayTrack);
+
+      // Revert to original track after short delay
+      setTimeout(() => {
+        if (currentTrack) {
+          playerSessionRef.setTimedTextTrack(currentTrack);
+          console.log('[LinguaFlix] Reverted to original subtitle track');
+        }
+        resolve();
+      }, 500);
+    } catch (err) {
+      console.error('[LinguaFlix] Error triggering overlay subtitle fetch:', err);
+      resolve();
+    }
+  });
 }
 
 /**
