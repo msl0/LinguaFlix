@@ -33,7 +33,7 @@
     // Inject defaults on error
     const settingsEl = document.createElement('div');
     settingsEl.id = 'linguaflix-settings';
-    settingsEl.setAttribute('data-settings', JSON.stringify({ overlayLanguage: 'pl' }));
+    settingsEl.setAttribute('data-settings', JSON.stringify({ overlayLanguage: 'pl', preferClosedCaptions: false }));
     settingsEl.style.display = 'none';
     document.documentElement.appendChild(settingsEl);
   }
