@@ -125,6 +125,8 @@ function timeToMs(timeStr, tickRate = 10000000) {
     }
   }
 
+  // WARNING: Unexpected time format detected
+  console.warn('[LinguaFlix] WARNING: Unexpected TTML time format detected: "' + timeStr + '" (expected tick format like "513429584t")');
   return 0;
 }
 
