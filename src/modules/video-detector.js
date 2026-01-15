@@ -1,5 +1,5 @@
 /**
- * ETAP 4: Video Detector Module
+ * PHASE 4: Video Detector Module
  * =============================
  * Detects <video> element appearance in Netflix page
  * Uses MutationObserver to find video element

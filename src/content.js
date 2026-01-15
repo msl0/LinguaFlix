@@ -64,6 +64,7 @@ async function armVideoFlow() {
         if (!api?.playerSession) {
           console.warn('[LinguaFlix] Player session not available (attempt ' + (retryCount + 1) + '/' + maxRetries + ')');
           retryCount++;
+          await new Promise(resolve => setTimeout(resolve, 500));
           continue;
         }
 

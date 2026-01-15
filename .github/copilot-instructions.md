@@ -13,7 +13,7 @@ The extension uses **dynamic ES6 imports** (see `content.js`) instead of static 
 
 ## The 8 Core Modules
 
-Each module exports specific functions with ZERO cross-module dependencies (except SubtitleFetcher imports SubtitleParser):
+Each module exports specific functions with minimal cross-module dependencies (only SubtitleFetcher imports SubtitleParser):
 
 1. **subtitle-parser.js** - Parse TTML XML into cue objects with `parseTTML()`, find text at time with `findCueAt(cues, seconds)`
 2. **video-detector.js** - Detect `<video>` element and call callback `detectVideo(callback)`
@@ -21,11 +21,11 @@ Each module exports specific functions with ZERO cross-module dependencies (exce
 4. **navigation-detector.js** - Detect Netflix route changes via `setupRouteDetection(callback)`
 5. **player-api-connector.js** - Access Netflix player session object via `getPlayerAPI()` (retries 10x on failure)
 6. **subtitle-fetcher.js** - Monitor TTML requests via PerformanceObserver, cache subtitles via `setupSubtitleFetching(playerSession)`
-7. **subtitle-display.js** - Show/hide Polish subtitle overlay via `showSubtitle(text)`, `hideSubtitle()`
+7. **subtitle-display.js** - Show/hide additional subtitle overlay via `showSubtitle(text)`, `hideSubtitle()`
 8. **settings.js** - Read user config from DOM element (injected by settings-injector.js) via `getSettings()`
 
 **Module Graph Flow:**
-```
+```text
 content.js (orchestrator)
   ├─→ video-detector → VideoDetector.detectVideo()
   ├─→ playback-detector → PlaybackDetector.setupPlaybackDetection()
@@ -50,12 +50,12 @@ content.js (orchestrator)
 
 ### On Pause
 1. Get current time from video element: `video.currentTime`
-2. Fetch cached Polish subtitles: `SubtitleFetcher.getSubtitleCache()[key]`
+2. Fetch cached additional subtitles: `SubtitleFetcher.getSubtitleCache()[key]`
 3. Find text at current time: `SubtitleParser.findCueAt(cues, currentTime)`
-4. Show Polish overlay: `SubtitleDisplay.showSubtitle(text)`
+4. Show additional overlay: `SubtitleDisplay.showSubtitle(text)`
 
 ### On Play
-1. Hide Polish overlay: `SubtitleDisplay.hideSubtitle()`
+1. Hide additional overlay: `SubtitleDisplay.hideSubtitle()`
 
 ## Critical Implementation Details
 
@@ -75,7 +75,7 @@ content.js (orchestrator)
 - Re-fetches TTML from same URL to parse structure
 
 ### Fullscreen Handling
-- Polish overlay must be appended to `document.fullscreenElement` when fullscreen active
+- additional overlay must be appended to `document.fullscreenElement` when fullscreen active
 - Z-index adjustment: `10000` (normal), `2147483647` (fullscreen) - see `subtitle-display.js`
 - **Watches `fullscreenchange` event** to re-parent overlay dynamically
 

@@ -1,5 +1,5 @@
 /**
- * ETAP 6: Player API Connector Module
+ * PHASE 6: Player API Connector Module
  * ====================================
  * Connects to Netflix internal Player API
  * Retrieves subtitle tracks and player session

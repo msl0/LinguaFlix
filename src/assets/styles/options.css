@@ -14,9 +14,6 @@ body {
 .header {
   margin-bottom: 40px;
   text-align: center;
-}
-
-.header {
   display: flex;
   align-items: center;
   justify-content: center;

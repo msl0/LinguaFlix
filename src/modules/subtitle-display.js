@@ -1,15 +1,23 @@
 /**
  * subtitle-display.js
- * 
+ *
  * Manages subtitle overlay DOM element
  * Handles fullscreen mode and z-index adjustments
  * Show/hide translated subtitle text
- * 
+ *
  * Public API:
  * - showSubtitle(text) → void
  * - hideSubtitle() → void
  * - cleanup() → void
  */
+
+// ============================================================================
+// CONSTANTS
+// ============================================================================
+
+// Z-index values to ensure overlay is always visible
+const FULLSCREEN_Z_INDEX = '2147483647'; // Max z-index (2^31 - 1) for fullscreen mode
+const NORMAL_Z_INDEX = '10000';          // Standard high z-index for normal mode
 
 // ============================================================================
 // MODULE STATE (private)
@@ -45,7 +53,7 @@ function showSubtitle(text) {
             console.warn('[LinguaFlix] Failed to move overlay to fullscreen:', e);
           }
         }
-        overlay.style.zIndex = document.fullscreenElement ? '2147483647' : '10000';
+        overlay.style.zIndex = document.fullscreenElement ? FULLSCREEN_Z_INDEX : NORMAL_Z_INDEX;
       };
     }
 
@@ -56,7 +64,7 @@ function showSubtitle(text) {
     }
 
     const targetParent = document.fullscreenElement || document.body;
-    const zIndex = document.fullscreenElement ? '2147483647' : '10000';
+    const zIndex = document.fullscreenElement ? FULLSCREEN_Z_INDEX : NORMAL_Z_INDEX;
 
     // Reuse existing overlay
     if (existing) {
@@ -106,7 +114,7 @@ function showSubtitle(text) {
 }
 
 /**
- * Ukrywa overlay
+ * Hide the overlay
  */
 function hideSubtitle() {
   try {
@@ -122,15 +130,15 @@ function hideSubtitle() {
 }
 
 /**
- * Cleanup: usuwa overlay z DOM i listeners
+ * Cleanup: removes overlay from the DOM and detaches listeners
  */
 function cleanup() {
   try {
     hideSubtitle();
     
     const overlay = overlayElement || document.getElementById('linguaflix-overlay');
-    if (overlay && overlay.parentNode) {
-      overlay.parentNode.removeChild(overlay);
+    if (overlay?.parentNode) {
+      overlay.remove();
     }
     
     if (fullscreenListenerAttached && fullscreenHandler) {

@@ -1,13 +1,13 @@
 /**
- * ETAP 7: Subtitle Fetcher Module
+ * PHASE 7: Subtitle Fetcher Module
  * ================================
  * Detects TTML subtitle requests via PerformanceObserver
  * Fetches TTML XML from Netflix CDN
  * Parses and caches subtitles
- * Triggers initial Polish subtitle fetch
+ * Triggers initial additional subtitle fetch
  * 
  * Dependencies: SubtitleParser (parseTTML, findCueAt)
- * Exports: { setupSubtitleFetching, triggerPolishSubtitleFetch, getSubtitleCache, cleanup }
+ * Exports: { setupSubtitleFetching, triggerOverlaySubtitleFetch, getSubtitleCache, cleanup }
  * Debug: window.SubtitleFetcher
  */
 

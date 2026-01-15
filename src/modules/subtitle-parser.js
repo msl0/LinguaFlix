@@ -46,7 +46,7 @@ function parseTTML(xmlString) {
 
     // Extract tickRate for time conversion
     const tickRateAttr = rootElement.getAttribute('ttp:tickRate');
-    const tickRate = tickRateAttr ? parseInt(tickRateAttr, 10) : 10000000;
+    const tickRate = tickRateAttr ? Number.parseInt(tickRateAttr, 10) : 10000000;
 
     // Find all <p> elements (Netflix TTML structure)
     const pElements = xmlDoc.querySelectorAll('body p');
@@ -78,8 +78,8 @@ function parseTTML(xmlString) {
     // Sort cues by start time
     result.cues.sort((a, b) => a.start - b.start);
 
-    const multilineCount = result.cues.reduce((acc, c) => 
-      acc + (c.text && c.text.includes('\n') ? 1 : 0), 0);
+    const multilineCount = result.cues.reduce((acc, c) =>
+      acc + (c.text?.includes('\n') ? 1 : 0), 0);
     console.log('[LinguaFlix] Parsed TTML: language=' + result.language + 
                 ', cues=' + result.cues.length + 
                 ', multiline cues=' + multilineCount);
@@ -119,8 +119,8 @@ function timeToMs(timeStr, tickRate = 10000000) {
 
   // Handle tick format: "513429584t" (Netflix native format)
   if (timeStr.endsWith('t')) {
-    const ticks = parseInt(timeStr.slice(0, -1), 10);
-    if (!isNaN(ticks)) {
+    const ticks = Number.parseInt(timeStr.slice(0, -1), 10);
+    if (!Number.isNaN(ticks)) {
       return Math.round((ticks / tickRate) * 1000);
     }
   }

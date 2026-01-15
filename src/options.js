@@ -1,5 +1,5 @@
 /**
- * settings.js
+ * options.js
  * 
  * Full settings page logic
  * Handles loading and saving extension settings
@@ -14,18 +14,14 @@ const DEFAULT_SETTINGS = {
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const settings = await loadSettings();
-    
+
     // Populate UI with current settings
     const languageSelect = document.getElementById('overlayLanguage');
-    if (languageSelect) {
-      languageSelect.value = settings.overlayLanguage || DEFAULT_SETTINGS.overlayLanguage;
-    }
-    
+    languageSelect.value = settings.overlayLanguage ?? DEFAULT_SETTINGS.overlayLanguage;
+
     const ccCheckbox = document.getElementById('preferClosedCaptions');
-    if (ccCheckbox) {
-      ccCheckbox.checked = settings.preferClosedCaptions || DEFAULT_SETTINGS.preferClosedCaptions;
-    }
-    
+    ccCheckbox.checked = settings.preferClosedCaptions ?? DEFAULT_SETTINGS.preferClosedCaptions;
+
     console.log('[LinguaFlix Settings] Settings loaded:', settings);
   } catch (err) {
     console.error('[LinguaFlix Settings] Error loading settings:', err);
@@ -63,13 +59,15 @@ document.getElementById('saveBtn').addEventListener('click', async () => {
 document.getElementById('resetBtn').addEventListener('click', async () => {
   try {
     const languageSelect = document.getElementById('overlayLanguage');
-    
+    const ccCheckbox = document.getElementById('preferClosedCaptions');
+
     // Reset to default
     await saveSettings(DEFAULT_SETTINGS);
-    
+
     // Update UI
     languageSelect.value = DEFAULT_SETTINGS.overlayLanguage;
-    
+    ccCheckbox.checked = DEFAULT_SETTINGS.preferClosedCaptions;
+
     showStatus('✓ Reset to default', 'success');
     console.log('[LinguaFlix Settings] Settings reset:', DEFAULT_SETTINGS);
   } catch (err) {

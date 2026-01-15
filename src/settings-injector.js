@@ -23,7 +23,7 @@
     // Inject settings into DOM as data-attribute (avoids CSP inline-script violation)
     const settingsEl = document.createElement('div');
     settingsEl.id = 'linguaflix-settings';
-    settingsEl.setAttribute('data-settings', JSON.stringify(settings));
+    settingsEl.dataset.settings = JSON.stringify(settings);
     settingsEl.style.display = 'none';
     document.documentElement.appendChild(settingsEl);
     
@@ -33,7 +33,7 @@
     // Inject defaults on error
     const settingsEl = document.createElement('div');
     settingsEl.id = 'linguaflix-settings';
-    settingsEl.setAttribute('data-settings', JSON.stringify({ overlayLanguage: 'pl', preferClosedCaptions: false }));
+    settingsEl.dataset.settings = JSON.stringify({ overlayLanguage: 'pl', preferClosedCaptions: false });
     settingsEl.style.display = 'none';
     document.documentElement.appendChild(settingsEl);
   }

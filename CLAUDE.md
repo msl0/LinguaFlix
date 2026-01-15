@@ -30,18 +30,20 @@ The extension uses **dynamic ES6 imports** instead of static script tags, provid
 
 ### The 8 Core Modules (`src/modules/`)
 
-| Module | Purpose | Key Export |
-|--------|---------|------------|
-| `video-detector.js` | Find `<video>` element via MutationObserver | `detectVideo(callback)` |
-| `playback-detector.js` | Monitor pause/play events | `setupPlaybackDetection(video, onPause, onPlay)` |
-| `player-api-connector.js` | Access Netflix player session (retries 10x) | `getPlayerAPI()` |
-| `subtitle-fetcher.js` | Detect TTML requests via PerformanceObserver, cache subtitles | `setupSubtitleFetching()`, `getSubtitleCache()` |
-| `subtitle-parser.js` | Parse TTML XML into cue objects | `parseTTML()`, `findCueAt(cues, seconds)` |
-| `subtitle-display.js` | Manage overlay DOM, handle fullscreen | `showSubtitle(text)`, `hideSubtitle()` |
-| `navigation-detector.js` | Detect Netflix SPA navigation | `setupRouteDetection(callback)` |
-| `settings.js` | Read user config from DOM | `getSettings()` |
+| Module | Purpose | Key Export | Lifecycle |
+|--------|---------|------------|-----------|
+| `video-detector.js` | Find `<video>` element via MutationObserver | `detectVideo(callback)` | Created/destroyed per `/watch/` route |
+| `playback-detector.js` | Monitor pause/play events | `setupPlaybackDetection(video, onPause, onPlay)` | Created/destroyed per `/watch/` route |
+| `player-api-connector.js` | Access Netflix player session (retries 10x) | `getPlayerAPI()` | Created/destroyed per `/watch/` route |
+| `subtitle-fetcher.js` | Detect TTML requests via PerformanceObserver, cache subtitles | `setupSubtitleFetching()`, `getSubtitleCache()` | Created/destroyed per `/watch/` route |
+| `subtitle-parser.js` | Parse TTML XML into cue objects | `parseTTML()`, `findCueAt(cues, seconds)` | Stateless utility |
+| `subtitle-display.js` | Manage overlay DOM, handle fullscreen | `showSubtitle(text)`, `hideSubtitle()` | Created/destroyed per `/watch/` route |
+| `navigation-detector.js` | Detect Netflix SPA navigation | `setupRouteDetection(callback)` | **Singleton - persists for page lifetime** |
+| `settings.js` | Read user config from DOM | `getSettings()` | Stateless utility |
 
-Modules have zero cross-module dependencies except SubtitleFetcher which imports SubtitleParser.
+**Module dependencies:** Zero cross-module dependencies except SubtitleFetcher which imports SubtitleParser.
+
+**Cleanup pattern:** All modules except `navigation-detector.js` provide a `cleanup()` function called when navigating away from `/watch/`. NavigationDetector persists to detect the next navigation.
 
 ### Subtitle Flow
 

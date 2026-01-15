@@ -1,5 +1,5 @@
 /**
- * ETAP 5: Playback Detector Module
+ * PHASE 5: Playback Detector Module
  * =================================
  * Detects pause/play events on <video> element
  * Manages event listeners and notifies via callbacks

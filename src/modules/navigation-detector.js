@@ -1,12 +1,15 @@
 /**
- * ETAP 3: Navigation Detector Module
+ * PHASE 3: Navigation Detector Module
  * ===================================
  * Detects URL changes in Netflix SPA (Single Page App)
  * Hooks history API (pushState, replaceState) and popstate events
- * 
+ *
  * Dependencies: ZERO
- * Exports: { setupRouteDetection, cleanup }
+ * Exports: { setupRouteDetection }
  * Debug: window.NavigationDetector
+ *
+ * NOTE: This module persists for the entire page lifetime.
+ * It does not provide a cleanup() function as it should never be destroyed.
  */
 
 // Private state
@@ -107,40 +110,10 @@ function setupRouteDetection(onRouteChange) {
   console.log('[LinguaFlix] Route detection setup complete');
 }
 
-/**
- * cleanup()
- * Removes all event listeners and restores original history functions
- * CRITICAL for preventing memory leaks on page navigation
- */
-function cleanup() {
-  console.debug('[LinguaFlix] NavigationDetector cleanup() called');
-
-  // Restore original functions
-  if (originalPushState) {
-    history.pushState = originalPushState;
-  }
-  if (originalReplaceState) {
-    history.replaceState = originalReplaceState;
-  }
-
-  // Remove popstate listener
-  if (popstateHandler) {
-    window.removeEventListener('popstate', popstateHandler);
-    popstateHandler = null;
-  }
-
-  // Reset state
-  routeDetectorAttached = false;
-  onRouteChangeCallback = null;
-
-  console.log('[LinguaFlix] Route detection cleaned up');
-}
-
-// ============================================
 // ============================================================================
 // EXPORTS
 // ============================================================================
 
-export { setupRouteDetection, cleanup };
+export { setupRouteDetection };
 
 console.log('[LinguaFlix] NavigationDetector module loaded');

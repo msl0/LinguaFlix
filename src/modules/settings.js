@@ -24,7 +24,7 @@ export async function getSettings() {
     const settingsEl = document.getElementById('linguaflix-settings');
     
     if (settingsEl) {
-      const settingsJson = settingsEl.getAttribute('data-settings');
+      const settingsJson = settingsEl.dataset.settings;
       if (settingsJson) {
         const injectedSettings = JSON.parse(settingsJson);
         console.log('[LinguaFlix Settings] Using injected settings:', injectedSettings);
