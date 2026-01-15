@@ -163,13 +163,8 @@ function extractCueText(node) {
       }
     })(node);
 
-    // Join and normalize without removing newlines
-    let text = parts.join('');
-    text = text.replace(/\r/g, '');
-    text = text.replace(/[ \t\u00A0]+/g, ' ');
-    text = text.replace(/[ \t]*\n[ \t]*/g, '\n');
-    text = text.replace(/\n{3,}/g, '\n\n');
-    text = text.trim();
+    // Join parts and trim whitespace
+    const text = parts.join('').trim();
     return text;
   } catch (err) {
     console.error('[LinguaFlix] Error extracting cue text:', err);
