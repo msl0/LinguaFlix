@@ -123,7 +123,7 @@ function handleSubtitleResponse(xmlString, url) {
     // Parse TTML using SubtitleParser module
     const result = parseTTML(xmlString);
     
-    if (!result || !result.cues) {
+    if (!result || !result.cues || result.cues.length === 0) {
       console.warn('[LinguaFlix] TTML parsing returned no cues');
       return;
     }
