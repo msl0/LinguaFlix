@@ -78,10 +78,6 @@ function parseTTML(xmlString) {
     // Sort cues by start time
     result.cues.sort((a, b) => a.start - b.start);
 
-    // ❌ USUNIĘTE (linie 367-368 z oryginału):
-    // window.extensionState.subtitleCache = {};
-    // Parser nie powinien zarządzać cache - to odpowiedzialność subtitle-fetcher.js
-
     const multilineCount = result.cues.reduce((acc, c) => 
       acc + (c.text && c.text.includes('\n') ? 1 : 0), 0);
     console.log('[LinguaFlix] Parsed TTML: language=' + result.language + 
