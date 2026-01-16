@@ -118,7 +118,7 @@ function isSubtitleRequest(url) {
  * @param {string} url - Request URL (for logging)
  * @returns {void}
  */
-function handleSubtitleResponse(xmlString, url) {
+function handleSubtitleResponse(xmlString, _url) {
   try {
     // Parse TTML using SubtitleParser module
     const result = parseTTML(xmlString);

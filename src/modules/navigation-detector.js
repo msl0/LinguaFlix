@@ -79,7 +79,7 @@ function setupRouteDetection(onRouteChange) {
    * Hook 1: history.pushState()
    * Fired when Netflix navigates (e.g., browse → watch page)
    */
-  history.pushState = function pushStateWrapper(state, title, url) {
+  history.pushState = function pushStateWrapper(_state, _title, _url) {
     console.debug('[LinguaFlix] history.pushState called');
     const result = originalPushState.apply(this, arguments);
     handleRouteChange();
@@ -90,7 +90,7 @@ function setupRouteDetection(onRouteChange) {
    * Hook 2: history.replaceState()
    * Fired when Netflix replaces state (e.g., back button)
    */
-  history.replaceState = function replaceStateWrapper(state, title, url) {
+  history.replaceState = function replaceStateWrapper(_state, _title, _url) {
     console.debug('[LinguaFlix] history.replaceState called');
     const result = originalReplaceState.apply(this, arguments);
     handleRouteChange();

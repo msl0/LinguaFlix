@@ -11,9 +11,12 @@
  */
 
 // Private state
+// eslint-disable-next-line no-unused-vars
 let cachedPlayerApp = null;
 let cachedPlayerSession = null;
+// eslint-disable-next-line no-unused-vars
 let cachedVideoPlayer = null;
+// eslint-disable-next-line no-unused-vars
 let cachedSessionId = null;
 
 /**
@@ -94,7 +97,7 @@ async function getPlayerAPI(options = {}) {
           console.log('[LinguaFlix] Player API ready:', {
             hasPlayerApp: !!playerApp,
             hasVideoPlayer: !!videoPlayer,
-            sessionId: sessionId
+            sessionId
           });
           
           return { 
@@ -197,7 +200,7 @@ function getSubtitleTracks(overlayLanguage = 'pl', preferClosedCaptions = false)
 
     console.log('[LinguaFlix] Subtitle tracks:', {
       hasOverlay: !!result.overlay,
-      overlayLanguage: overlayLanguage,
+      overlayLanguage,
       preferCC: preferClosedCaptions,
       selectedType: result.overlay?.rawTrackType,
       totalTracks: trackList.length,
