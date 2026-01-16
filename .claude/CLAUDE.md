@@ -17,8 +17,6 @@ LinguaFlix is a Chrome Extension (Manifest V3) that shows secondary subtitles in
 
 **Debugging:** VS Code launch config (`.vscode/launch.json`) attaches to Edge on port 9222.
 
-**Code quality:** SonarQube runs on push to main and PRs via GitHub Actions.
-
 ## Architecture
 
 The extension uses **dynamic ES6 imports** instead of static script tags, providing isolated module scopes and debug access via `window.ModuleName`.
