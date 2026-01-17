@@ -6,7 +6,7 @@
  * Parses and caches subtitles
  * Triggers initial additional subtitle fetch
  * 
- * Dependencies: SubtitleParser (parseTTML, findCueAt)
+ * Dependencies: SubtitleParser (parseTTML)
  * Exports: { setupSubtitleFetching, triggerOverlaySubtitleFetch, getSubtitleCache, cleanup }
  * Debug: window.SubtitleFetcher
  */
@@ -80,7 +80,12 @@ function setupSubtitleFetching(playerSession) {
             
             // Fetch TTML XML independently
             fetch(entry.name)
-              .then(response => response.text())
+              .then(response => {
+                if (!response.ok) {
+                  throw new Error(`HTTP ${response.status}: ${entry.name}`);
+                }
+                return response.text();
+              })
               .then(xmlString => handleSubtitleResponse(xmlString, entry.name))
               .catch(err => console.warn('[LinguaFlix] Failed to fetch TTML:', err));
           }
@@ -123,7 +128,7 @@ function handleSubtitleResponse(xmlString, _url) {
     // Parse TTML using SubtitleParser module
     const result = parseTTML(xmlString);
     
-    if (!result || !result.cues || result.cues.length === 0) {
+    if (!result?.cues || result.cues.length === 0) {
       console.warn('[LinguaFlix] TTML parsing returned no cues');
       return;
     }
@@ -131,7 +136,7 @@ function handleSubtitleResponse(xmlString, _url) {
     const { cues, language } = result;
 
     // Get video ID from Netflix player session
-    if (!playerSessionRef || !playerSessionRef.getMovieId) {
+    if (!playerSessionRef?.getMovieId) {
       console.warn('[LinguaFlix] Cannot get video ID: player session not available');
       return;
     }
@@ -191,7 +196,7 @@ function triggerOverlaySubtitleFetch(overlayTrack, currentTrack, language = 'pl'
 
       // Revert to original track after short delay
       setTimeout(() => {
-        if (currentTrack) {
+        if (currentTrack && playerSessionRef?.setTimedTextTrack) {
           playerSessionRef.setTimedTextTrack(currentTrack);
           console.log('[LinguaFlix] Reverted to original subtitle track');
         }

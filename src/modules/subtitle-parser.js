@@ -46,7 +46,10 @@ function parseTTML(xmlString) {
 
     // Extract tickRate for time conversion
     const tickRateAttr = rootElement.getAttribute('ttp:tickRate');
-    const tickRate = tickRateAttr ? Number.parseInt(tickRateAttr, 10) : 10000000;
+    const parsedTickRate = tickRateAttr ? Number.parseInt(tickRateAttr, 10) : 10000000;
+    const tickRate = Number.isFinite(parsedTickRate) && parsedTickRate > 0
+      ? parsedTickRate
+      : 10000000;
 
     // Find all <p> elements (Netflix TTML structure)
     const pElements = xmlDoc.querySelectorAll('body p');
@@ -98,8 +101,7 @@ function parseTTML(xmlString) {
  */
 function findCueAt(timeMs, cues) {
   if (!Array.isArray(cues) || !cues.length) return null;
-  for (let i = 0; i < cues.length; i++) {
-    const c = cues[i];
+  for (const c of cues) {
     if (timeMs >= c.start && timeMs < c.end) return c;
     if (timeMs < c.start) break; // cues sorted, early exit
   }
@@ -155,8 +157,8 @@ function extractCueText(node) {
           parts.push('\n');
         }
         const children = n.childNodes || [];
-        for (let i = 0; i < children.length; i++) {
-          walk(children[i]);
+        for (const child of children) {
+          walk(child);
         }
       }
     })(node);
