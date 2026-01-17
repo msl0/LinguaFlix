@@ -51,9 +51,8 @@ function parseTTML(xmlString) {
       ? parsedTickRate
       : 10000000;
 
-    // Find all <p> elements (Netflix TTML structure)
-    const pElements = xmlDoc.querySelectorAll('body p');
-    if (pElements.length === 0) {
+    const bodyElement = xmlDoc.getElementsByTagNameNS('*', 'body')[0];
+    const pElements = bodyElement ? bodyElement.getElementsByTagNameNS('*', 'p') : [];
       console.warn('[LinguaFlix] No <p> elements found in TTML');
       return result;
     }
