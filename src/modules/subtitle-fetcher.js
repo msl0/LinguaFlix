@@ -74,10 +74,13 @@ function setupSubtitleFetching(playerSession) {
             if (processedUrls.has(entry.name)) {
               continue;
             }
-            
+
             processedUrls.add(entry.name);
             console.log('[LinguaFlix] TTML request detected:', entry.name);
-            
+
+            // Capture videoId at detection time to avoid race conditions
+            const videoId = playerSessionRef?.getMovieId?.();
+
             // Fetch TTML XML independently
             fetch(entry.name)
               .then(response => {
@@ -86,7 +89,7 @@ function setupSubtitleFetching(playerSession) {
                 }
                 return response.text();
               })
-              .then(xmlString => handleSubtitleResponse(xmlString, entry.name))
+              .then(xmlString => handleSubtitleResponse(xmlString, entry.name, videoId))
               .catch(err => console.warn('[LinguaFlix] Failed to fetch TTML:', err));
           }
         }
@@ -116,18 +119,19 @@ function isSubtitleRequest(url) {
 }
 
 /**
- * handleSubtitleResponse(xmlString, url)
+ * handleSubtitleResponse(xmlString, url, videoId)
  * Parses TTML XML and caches subtitles
- * 
+ *
  * @param {string} xmlString - TTML XML content
  * @param {string} url - Request URL (for logging)
+ * @param {string} videoId - Video ID captured at detection time
  * @returns {void}
  */
-function handleSubtitleResponse(xmlString, _url) {
+function handleSubtitleResponse(xmlString, _url, videoId) {
   try {
     // Parse TTML using SubtitleParser module
     const result = parseTTML(xmlString);
-    
+
     if (!result?.cues || result.cues.length === 0) {
       console.warn('[LinguaFlix] TTML parsing returned no cues');
       return;
@@ -135,18 +139,17 @@ function handleSubtitleResponse(xmlString, _url) {
 
     const { cues, language } = result;
 
-    // Get video ID from Netflix player session
-    if (!playerSessionRef?.getMovieId) {
-      console.warn('[LinguaFlix] Cannot get video ID: player session not available');
+    // Validate videoId was captured successfully
+    if (!videoId) {
+      console.warn('[LinguaFlix] Cannot cache subtitles: videoId unavailable');
       return;
     }
 
-    const videoId = playerSessionRef.getMovieId();
     const cacheKey = `${videoId}_${language}`;
 
     // Cache subtitles
     subtitleCache[cacheKey] = cues;
-    
+
     console.log(`[LinguaFlix] Cached ${cues.length} subtitles for ${cacheKey}`);
   } catch (err) {
     console.error('[LinguaFlix] Error handling subtitle response:', err);

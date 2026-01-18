@@ -53,6 +53,8 @@ function parseTTML(xmlString) {
 
     const bodyElement = xmlDoc.getElementsByTagNameNS('*', 'body')[0];
     const pElements = bodyElement ? bodyElement.getElementsByTagNameNS('*', 'p') : [];
+
+    if (!pElements.length) {
       console.warn('[LinguaFlix] No <p> elements found in TTML');
       return result;
     }
