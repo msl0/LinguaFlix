@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaFlix Settings</title>
+  <link rel="stylesheet" href="assets/styles/common.css">
+  <link rel="stylesheet" href="assets/styles/options.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="assets/icons/icon.svg" alt="LinguaFlix" class="header-icon">
+      <h1>LinguaFlix</h1>
+    </div>
+
+    <div class="settings-section">
+      <label for="overlayLanguage">Subtitle language when paused:</label>
+      <select id="overlayLanguage">
+        <option value="pl">Polish (Polski)</option>
+        <option value="en">English</option>
+        <option value="de">German (Deutsch)</option>
+        <option value="fr">French (Français)</option>
+        <option value="es">Spanish (Español)</option>
+        <option value="it">Italian (Italiano)</option>
+        <option value="pt">Portuguese (Português)</option>
+        <option value="ru">Russian (Русский)</option>
+        <option value="ja">Japanese (日本語)</option>
+        <option value="ko">Korean (한국어)</option>
+        <option value="zh">Chinese (中文)</option>
+      </select>
+
+      <p class="info-text">
+        When you pause Netflix, you'll see subtitles in your chosen language on top of the video. When you play again, they disappear and Netflix shows subtitles as usual
+      </p>
+
+      <div class="checkbox-group">
+        <div class="checkbox-item">
+          <input type="checkbox" id="preferClosedCaptions">
+          <label for="preferClosedCaptions">Prefer Closed Captions (CC)</label>
+        </div>
+        <p class="info-text" style="margin-top: 8px;">Use closed captions instead of regular subtitles when they're available</p>
+      </div>
+
+      <div class="button-group">
+        <button class="btn-save" id="saveBtn">Save Settings</button>
+        <button class="btn-reset" id="resetBtn">Reset to Default</button>
+      </div>
+
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+
+</html>
