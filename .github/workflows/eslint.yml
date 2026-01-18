@@ -16,6 +16,9 @@ on:
       - 'package.json'
       - '.github/workflows/eslint.yml'
 
+permissions:
+  contents: read
+
 jobs:
   eslint:
     name: Run ESLint
