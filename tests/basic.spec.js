@@ -10,7 +10,7 @@ test('uruchom przeglądarkę', async () => {
   const extensionPath = path.resolve('./src');
 
   const context = await chromium.launchPersistentContext('', {
-    headless: false,
+    headless: process.env.CI ? true : false,
     channel: 'chromium',
     args: [
       `--disable-extensions-except=${extensionPath}`,

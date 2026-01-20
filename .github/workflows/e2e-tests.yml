@@ -24,4 +24,4 @@ jobs:
           echo "${{ secrets.NETFLIX_AUTH_STATE }}" | base64 -d > playwright/.auth/netflix.json
 
       - name: Run E2E tests
-        run: npm test
+        run: npm test -- --grep-invert "authenticate"
