@@ -28,5 +28,5 @@ test('uruchom przeglądarkę', async () => {
 
   const page = await context.newPage();
   await page.goto('https://www.netflix.com/browse');
-  await page.waitForTimeout(1000000);
+  //await page.waitForTimeout(1000000);
 });
