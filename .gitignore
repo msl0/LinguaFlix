@@ -42,3 +42,6 @@ desktop.ini
 
 # Local settings
 .claude/settings.local.json
+
+# Playwright
+playwright/.auth/
