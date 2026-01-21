@@ -5,12 +5,7 @@
   "description": "Learn languages on Netflix - pause to see additional subtitles in your chosen language",
   "author": "Marcin Słowikowski",
   "license": "ISC",
-  "keywords": [
-    "chrome-extension",
-    "netflix",
-    "subtitles",
-    "language-learning"
-  ],
+  "keywords": ["chrome-extension", "netflix", "subtitles", "language-learning"],
   "directories": {
     "doc": "docs"
   },
