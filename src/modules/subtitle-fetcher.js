@@ -112,10 +112,10 @@ function setupSubtitleFetching(playerSession) {
  * Checks if URL is a Netflix TTML subtitle request
  * 
  * Netflix TTML URLs have pattern:
- * https://...oca.nflxvideo.net/.../?o=...
+ * https://...oca.nflxvideo.net/?o=...
  */
 function isSubtitleRequest(url) {
-  return url.includes('oca.nflxvideo.net') && url.includes('/?o=');
+  return url.includes('oca.nflxvideo.net/?o=');
 }
 
 /**
