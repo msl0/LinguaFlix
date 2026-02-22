@@ -64,7 +64,7 @@ LinguaFlix can only show subtitles that Netflix provides. If the title you're wa
 
 ## Contributing
 
-Found a bug? Have an idea for a new feature? I'd love to hear from you — just [open an issue](https://github.com/msl0/LinguaFlix/issues/new/choose) and tell us what happened or what you'd like to see.
+Found a bug? Have an idea for a new feature? I'd love to hear from you — just [open an issue](https://github.com/msl0/LinguaFlix/issues/new/choose) and tell me what happened or what you'd like to see.
 
 If you'd like to contribute code, please open an issue first to discuss what you'd like to change.
 
