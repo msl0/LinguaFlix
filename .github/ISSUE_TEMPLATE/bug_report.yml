@@ -1,0 +1,69 @@
+name: Bug Report
+description: Something isn't working right? Let me know.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the problem you ran into.
+      placeholder: "e.g. The subtitle overlay didn't appear when I paused."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: What were you doing when the problem happened?
+      placeholder: |
+        1. Opened Netflix and played "Dark" (https://www.netflix.com/title/80100172)
+        2. Enabled English subtitles
+        3. Paused the video
+        4. No overlay appeared
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What did you expect?
+      description: What should have happened instead?
+      placeholder: "e.g. I expected to see Polish subtitles when I paused."
+    validations:
+      required: true
+
+  - type: input
+    id: netflix-title
+    attributes:
+      label: Netflix title
+      description: Which show or movie were you watching? (Helps us reproduce the issue.)
+      placeholder: "e.g. Dark, Season 1, Episode 3 (https://www.netflix.com/title/80100172)"
+    validations:
+      required: false
+
+  - type: input
+    id: browser-os
+    attributes:
+      label: Browser & OS
+      description: What browser and operating system are you using?
+      placeholder: "e.g. Chrome 125 on Windows 11"
+    validations:
+      required: false
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension version
+      description: You can find this on chrome://extensions/ next to LinguaFlix.
+      placeholder: "e.g. 1.2.0"
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, drag and drop any screenshots here.
+    validations:
+      required: false
