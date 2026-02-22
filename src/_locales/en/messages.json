@@ -1,0 +1,110 @@
+{
+  "extName": {
+    "message": "LinguaFlix",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Learn languages on Netflix - pause to see additional subtitles in your chosen language",
+    "description": "Extension description"
+  },
+  "settingsButton": {
+    "message": "Settings",
+    "description": "Button to open settings page"
+  },
+  "settingsTitle": {
+    "message": "LinguaFlix Settings",
+    "description": "Settings page title"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Subtitle language when paused:",
+    "description": "Label for language dropdown"
+  },
+  "langPolish": {
+    "message": "Polish (Polski)",
+    "description": "Polish language option"
+  },
+  "langEnglish": {
+    "message": "English",
+    "description": "English language option"
+  },
+  "langGerman": {
+    "message": "German (Deutsch)",
+    "description": "German language option"
+  },
+  "langFrench": {
+    "message": "French (Français)",
+    "description": "French language option"
+  },
+  "langSpanish": {
+    "message": "Spanish (Español)",
+    "description": "Spanish language option"
+  },
+  "langItalian": {
+    "message": "Italian (Italiano)",
+    "description": "Italian language option"
+  },
+  "langPortuguese": {
+    "message": "Portuguese (Português)",
+    "description": "Portuguese language option"
+  },
+  "langRussian": {
+    "message": "Russian (Русский)",
+    "description": "Russian language option"
+  },
+  "langJapanese": {
+    "message": "Japanese (日本語)",
+    "description": "Japanese language option"
+  },
+  "langKorean": {
+    "message": "Korean (한국어)",
+    "description": "Korean language option"
+  },
+  "langChinese": {
+    "message": "Chinese (中文)",
+    "description": "Chinese language option"
+  },
+  "infoText": {
+    "message": "When you pause Netflix, you'll see subtitles in your chosen language on top of the video. When you play again, they disappear and Netflix shows subtitles as usual",
+    "description": "Explanation of how the extension works"
+  },
+  "preferCC": {
+    "message": "Prefer Closed Captions (CC)",
+    "description": "Checkbox label for CC preference"
+  },
+  "ccInfoText": {
+    "message": "Use closed captions instead of regular subtitles when they're available",
+    "description": "Explanation of CC preference"
+  },
+  "saveSettings": {
+    "message": "Save Settings",
+    "description": "Save button text"
+  },
+  "resetToDefault": {
+    "message": "Reset to Default",
+    "description": "Reset button text"
+  },
+  "errorLoading": {
+    "message": "Error loading settings",
+    "description": "Error message when settings fail to load"
+  },
+  "errorSelectLanguage": {
+    "message": "Please select a language",
+    "description": "Validation error for empty language"
+  },
+  "settingsSaved": {
+    "message": "✓ Settings saved! Reload Netflix to apply changes.",
+    "description": "Success message after saving"
+  },
+  "errorSaving": {
+    "message": "✗ Error saving settings",
+    "description": "Error message when save fails"
+  },
+  "resetDone": {
+    "message": "✓ Reset to default",
+    "description": "Success message after reset"
+  },
+  "errorResetting": {
+    "message": "✗ Error resetting settings",
+    "description": "Error message when reset fails"
+  }
+}

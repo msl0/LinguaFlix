@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.log('[LinguaFlix Settings] Settings loaded:', settings);
   } catch (err) {
     console.error('[LinguaFlix Settings] Error loading settings:', err);
-    showStatus('Error loading settings', 'error');
+    showStatus(chrome.i18n.getMessage('errorLoading'), 'error');
   }
 });
 
@@ -40,18 +40,18 @@ document.getElementById('saveBtn').addEventListener('click', async () => {
     
     // Validate
     if (!overlayLanguage) {
-      showStatus('Please select a language', 'error');
+      showStatus(chrome.i18n.getMessage('errorSelectLanguage'), 'error');
       return;
     }
     
     // Save to chrome.storage.sync
     await saveSettings({ overlayLanguage, preferClosedCaptions });
     
-    showStatus('✓ Settings saved! Reload Netflix to apply changes.', 'success');
+    showStatus(chrome.i18n.getMessage('settingsSaved'), 'success');
     console.log('[LinguaFlix Settings] Settings saved:', { overlayLanguage, preferClosedCaptions });
   } catch (err) {
     console.error('[LinguaFlix Settings] Error saving settings:', err);
-    showStatus('✗ Error saving settings', 'error');
+    showStatus(chrome.i18n.getMessage('errorSaving'), 'error');
   }
 });
 
@@ -68,11 +68,11 @@ document.getElementById('resetBtn').addEventListener('click', async () => {
     languageSelect.value = DEFAULT_SETTINGS.overlayLanguage;
     ccCheckbox.checked = DEFAULT_SETTINGS.preferClosedCaptions;
 
-    showStatus('✓ Reset to default', 'success');
+    showStatus(chrome.i18n.getMessage('resetDone'), 'success');
     console.log('[LinguaFlix Settings] Settings reset:', DEFAULT_SETTINGS);
   } catch (err) {
     console.error('[LinguaFlix Settings] Error resetting settings:', err);
-    showStatus('✗ Error resetting settings', 'error');
+    showStatus(chrome.i18n.getMessage('errorResetting'), 'error');
   }
 });
 

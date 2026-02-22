@@ -1,0 +1,83 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Ucz się języków na Netflix - zatrzymaj film, aby zobaczyć dodatkowe napisy w wybranym języku"
+  },
+  "settingsButton": {
+    "message": "Ustawienia"
+  },
+  "settingsTitle": {
+    "message": "Ustawienia LinguaFlix"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Język napisów po zatrzymaniu:"
+  },
+  "langPolish": {
+    "message": "Polski"
+  },
+  "langEnglish": {
+    "message": "Angielski (English)"
+  },
+  "langGerman": {
+    "message": "Niemiecki (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Francuski (Français)"
+  },
+  "langSpanish": {
+    "message": "Hiszpański (Español)"
+  },
+  "langItalian": {
+    "message": "Włoski (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Portugalski (Português)"
+  },
+  "langRussian": {
+    "message": "Rosyjski (Русский)"
+  },
+  "langJapanese": {
+    "message": "Japoński (日本語)"
+  },
+  "langKorean": {
+    "message": "Koreański (한국어)"
+  },
+  "langChinese": {
+    "message": "Chiński (中文)"
+  },
+  "infoText": {
+    "message": "Gdy zatrzymasz Netflix, zobaczysz napisy w wybranym języku na ekranie. Gdy wznowisz odtwarzanie, znikną i Netflix pokaże napisy jak zwykle"
+  },
+  "preferCC": {
+    "message": "Preferuj napisy dla niesłyszących (CC)"
+  },
+  "ccInfoText": {
+    "message": "Używaj napisów dla niesłyszących zamiast zwykłych napisów, gdy są dostępne"
+  },
+  "saveSettings": {
+    "message": "Zapisz ustawienia"
+  },
+  "resetToDefault": {
+    "message": "Przywróć domyślne"
+  },
+  "errorLoading": {
+    "message": "Błąd wczytywania ustawień"
+  },
+  "errorSelectLanguage": {
+    "message": "Wybierz język"
+  },
+  "settingsSaved": {
+    "message": "✓ Ustawienia zapisane! Odśwież Netflix, aby zastosować zmiany."
+  },
+  "errorSaving": {
+    "message": "✗ Błąd zapisywania ustawień"
+  },
+  "resetDone": {
+    "message": "✓ Przywrócono domyślne"
+  },
+  "errorResetting": {
+    "message": "✗ Błąd przywracania ustawień"
+  }
+}
