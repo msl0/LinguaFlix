@@ -1,22 +1,13 @@
-import { test, chromium } from '@playwright/test';
+import { test } from './fixtures.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const authFile = path.join(__dirname, '../../playwright/.auth/netflix.json');
 
-test('authenticate to netflix', async () => {
-  const extensionPath = path.resolve('./src');
+test.use({ headless: false });
 
-  const context = await chromium.launchPersistentContext('', {
-    headless: false,
-    channel: 'chrome',
-    args: [
-      `--disable-extensions-except=${extensionPath}`,
-      `--load-extension=${extensionPath}`,
-    ],
-  });
-
+test('authenticate to netflix', async ({ context }) => {
   const page = await context.newPage();
   await page.goto('https://www.netflix.com/login');
 
@@ -28,6 +19,4 @@ test('authenticate to netflix', async () => {
 
   await page.context().storageState({ path: authFile });
   console.log(`Session saved to: ${authFile}`);
-
-  await context.close();
 });
