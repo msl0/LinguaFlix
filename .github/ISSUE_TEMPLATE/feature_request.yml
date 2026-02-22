@@ -20,10 +20,3 @@ body:
     validations:
       required: true
 
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives considered
-      description: Have you tried any workarounds or other tools?
-    validations:
-      required: false
