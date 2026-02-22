@@ -1,0 +1,29 @@
+name: Feature Request
+description: Suggest an idea or improvement.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the feature
+      description: What would you like LinguaFlix to do?
+      placeholder: "e.g. Show a translation of individual words when I hover over them."
+    validations:
+      required: true
+
+  - type: textarea
+    id: why-useful
+    attributes:
+      label: Why would this be useful?
+      description: How would this help you or other language learners?
+      placeholder: "e.g. It would let me learn new vocabulary without leaving Netflix."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you tried any workarounds or other tools?
+    validations:
+      required: false
