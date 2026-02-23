@@ -1,6 +1,6 @@
 # LinguaFlix
 
-**Pause Netflix to see subtitles in another language.** A Chrome extension for language learners that overlays secondary subtitles when you pause — then disappears when you play.
+**Learn languages on Netflix — pause to instantly see subtitles in your native language.**
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bllbooanjfhngljkndcaehbojpdhooka?style=flat-square)](https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka)
 
@@ -15,19 +15,23 @@
   <em>Choose your language in Settings</em>
 </p>
 
+## Why I built LinguaFlix
+
+I was learning English by watching Netflix with English subtitles, but whenever I didn't understand something, I had to pause, open a translator, type the phrase, and go back — it completely broke the flow. I just wanted to pause and instantly see the subtitle in my native language. The existing extensions didn't solve this either — some shrank the video to fit extra subtitle layers, others required extra clicks to see a translation, and others were unreliable. So I built LinguaFlix: pause to see the subtitle in your language, play to continue. That's it.
+
 ## Features
 
-- **Your language on pause** — pause to see subtitles in your native language, play to continue watching normally
+- **Instant subtitle overlay on pause** — no extra clicks, no copy-pasting into a translator
 - **Works in fullscreen** — the overlay follows fullscreen transitions seamlessly
 - **Closed Captions support** — optionally prefer CC tracks when available
-- **Private and lightweight** — everything runs locally in your browser, no data leaves your machine. The extension only runs on netflix.com and requires no special permissions
+- **Private and lightweight** — everything runs locally in your browser, no data leaves your machine. No tracking, no accounts, no bloat
 
 ## How It Works
 
-1. Install the extension and pick your native language in Settings
-2. Play any Netflix title. Enable subtitles in a foreign language (e.g. English)
-3. **Pause** — LinguaFlix shows the subtitle in your native language as an overlay on top of the Netflix player
-4. **Play** — the overlay disappears and Netflix continues as normal
+1. Pick your native language in Settings
+2. Play any Netflix title with foreign-language subtitles enabled
+3. **Pause** — see the subtitle in your language overlaid on the video
+4. **Play** — the overlay disappears, Netflix continues as normal
 
 Under the hood, the extension detects when Netflix loads subtitle files, parses them, and keeps them ready so the translation appears instantly when you pause.
 
