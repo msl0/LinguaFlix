@@ -209,8 +209,14 @@
       transition: transform 0.2s;
     }
 
-    .screenshots img:hover {
+    .screenshots img:hover,
+    .screenshots img:focus-visible {
       transform: scale(1.01);
+    }
+
+    .screenshots img:focus-visible {
+      outline: 2px solid #e50914;
+      outline-offset: 2px;
     }
 
     .screenshots figcaption {
@@ -420,8 +426,8 @@
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#127760;</div>
-        <h3>11 Languages</h3>
-        <p>Choose from English, Polish, Spanish, French, German, Italian, Portuguese, Dutch, Turkish, Swedish, and Norwegian.</p>
+        <h3>15 Languages</h3>
+        <p>Choose from English, Polish, Spanish, French, German, Italian, Portuguese, Dutch, Turkish, Swedish, Norwegian, Russian, Japanese, Korean, and Chinese.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">&#128274;</div>
@@ -436,11 +442,11 @@
     <h2 class="section-title">See It in Action</h2>
     <div class="screenshots">
       <figure>
-        <img src="screenshots/1-1280x800.jpg" alt="LinguaFlix showing Polish subtitle overlay on Stranger Things" loading="lazy" width="1280" height="800" onclick="openLightbox(this)">
+        <img class="lightbox-trigger" src="screenshots/1-1280x800.jpg" alt="LinguaFlix showing Polish subtitle overlay on Stranger Things" loading="lazy" width="1280" height="800" tabindex="0" role="button" aria-label="Open full-size screenshot of Polish subtitle overlay on Stranger Things">
         <figcaption>Polish subtitle overlay on Stranger Things — original English subtitle stays at the bottom</figcaption>
       </figure>
       <figure>
-        <img src="screenshots/3-1280x800.png" alt="LinguaFlix showing Spanish subtitle overlay on The Walking Dead" loading="lazy" width="1280" height="800" onclick="openLightbox(this)">
+        <img class="lightbox-trigger" src="screenshots/3-1280x800.png" alt="LinguaFlix showing Spanish subtitle overlay on The Walking Dead" loading="lazy" width="1280" height="800" tabindex="0" role="button" aria-label="Open full-size screenshot of Spanish subtitle overlay on The Walking Dead">
         <figcaption>Spanish subtitle overlay on The Walking Dead</figcaption>
       </figure>
     </div>
@@ -495,6 +501,17 @@
     function closeLightbox() {
       document.getElementById('lightbox').classList.remove('active');
     }
+    document.querySelectorAll('.lightbox-trigger').forEach(function(img) {
+      img.addEventListener('click', function() {
+        openLightbox(img);
+      });
+      img.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(img);
+        }
+      });
+    });
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox();
     });
