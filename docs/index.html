@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaFlix — Secondary Subtitles for Netflix</title>
+  <meta name="description" content="LinguaFlix is a Chrome extension that shows secondary subtitles in your chosen language when you pause Netflix. Learn languages while watching your favorite shows.">
+  <meta property="og:title" content="LinguaFlix — Secondary Subtitles for Netflix">
+  <meta property="og:description" content="Show secondary subtitles in your chosen language when you pause Netflix. Learn languages while watching your favorite shows.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 128 128' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='128' height='128' fill='%230f0f0f' rx='24'/%3E%3Cpolygon points='36,18 36,62 92,40' fill='%23b81d13'/%3E%3Crect x='16' y='86' width='96' height='12' fill='%23b81d13' rx='6'/%3E%3Crect x='16' y='104' width='96' height='12' fill='%23b81d13' rx='6'/%3E%3C/svg%3E">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #0f0f0f;
+      color: #e5e5e5;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #e5e5e5;
+      text-decoration: none;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 80px 24px 64px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-icon {
+      width: 96px;
+      height: 96px;
+      margin-bottom: 24px;
+      border-radius: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 span {
+      color: #b81d13;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #a0a0a0;
+      margin-bottom: 36px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #b81d13;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 14px 32px;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .cta-button:hover {
+      background: #d42516;
+      transform: translateY(-1px);
+    }
+
+    .cta-button svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ── Section shared ── */
+    section {
+      padding: 64px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 48px;
+    }
+
+    /* ── How it works ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      background: #b81d13;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+    }
+
+    .step h3 {
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #a0a0a0;
+      font-size: 0.95rem;
+    }
+
+    .step-arrow {
+      display: none;
+    }
+
+    /* ── Features ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+
+    .feature-card:hover {
+      border-color: #b81d13;
+    }
+
+    .feature-icon {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #a0a0a0;
+      font-size: 0.9rem;
+    }
+
+    /* ── Screenshots ── */
+    .screenshots {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .screenshots img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+    }
+
+    .screenshots figcaption {
+      text-align: center;
+      color: #a0a0a0;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    /* ── Video ── */
+    .video-wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #2a2a2a;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ── Install CTA ── */
+    .install-cta {
+      text-align: center;
+      padding: 64px 24px 80px;
+    }
+
+    .install-cta h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .install-cta p {
+      color: #a0a0a0;
+      margin-bottom: 32px;
+      font-size: 1.05rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #1a1a1a;
+      text-align: center;
+      padding: 32px 24px;
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #a0a0a0;
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: #b81d13;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 56px 20px 48px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 48px 20px;
+        max-width: 100%;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <svg class="hero-icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+      <rect width="128" height="128" fill="#0f0f0f" rx="24"/>
+      <polygon points="36,18 36,62 92,40" fill="#b81d13"/>
+      <rect x="16" y="86" width="96" height="12" fill="#b81d13" rx="6"/>
+      <rect x="16" y="104" width="96" height="12" fill="#b81d13" rx="6"/>
+    </svg>
+    <h1>Lingua<span>Flix</span></h1>
+    <p>Show secondary subtitles in your language when you pause Netflix. Learn languages while watching your favorite shows.</p>
+    <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+      Add to Chrome — It's Free
+    </a>
+  </div>
+
+  <!-- How it works -->
+  <section>
+    <h2 class="section-title">How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Pause</h3>
+        <p>Hit pause on any Netflix show or movie while subtitles are on screen.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Read</h3>
+        <p>A second subtitle in your chosen language appears at the top of the screen.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Play</h3>
+        <p>Press play and the overlay disappears. Keep watching, keep learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section>
+    <h2 class="section-title">Features</h2>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">&#9889;</div>
+        <h3>Instant Overlay</h3>
+        <p>Subtitles appear the moment you pause — no delay, no extra clicks. Uses Netflix's own subtitle data for accuracy.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#9634;</div>
+        <h3>Fullscreen Support</h3>
+        <p>Works seamlessly in fullscreen mode. The overlay follows you wherever you watch.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127760;</div>
+        <h3>11 Languages</h3>
+        <p>Choose from English, Polish, Spanish, French, German, Italian, Portuguese, Dutch, Turkish, Swedish, and Norwegian.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128274;</div>
+        <h3>Privacy First</h3>
+        <p>No data collection. No tracking. No accounts. Everything runs locally in your browser.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section>
+    <h2 class="section-title">See It in Action</h2>
+    <div class="screenshots">
+      <figure>
+        <img src="screenshots/1-1280x800.jpg" alt="LinguaFlix showing Polish subtitle overlay on Stranger Things" loading="lazy" width="1280" height="800">
+        <figcaption>Polish subtitle overlay on Stranger Things — original English subtitle stays at the bottom</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/3-1280x800.png" alt="LinguaFlix showing Spanish subtitle overlay on The Walking Dead" loading="lazy" width="1280" height="800">
+        <figcaption>Spanish subtitle overlay on The Walking Dead</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section>
+    <h2 class="section-title">Watch the Demo</h2>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/52YYRb15R0w"
+        title="LinguaFlix Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- Install CTA -->
+  <div class="install-cta">
+    <h2>Start Learning with Netflix Today</h2>
+    <p>Free and open source. Takes 2 seconds to install.</p>
+    <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+      Add to Chrome — It's Free
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/msl0/LinguaFlix" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">Chrome Web Store</a>
+    </div>
+    <p>Built by Marcin Słowikowski</p>
+  </footer>
+
+</body>
+</html>
