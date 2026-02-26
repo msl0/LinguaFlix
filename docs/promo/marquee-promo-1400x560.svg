@@ -1,0 +1,140 @@
+<svg width="1400" height="560" viewBox="0 0 1400 560" xmlns="http://www.w3.org/2000/svg">
+  <!-- OPTION B FINAL: "Dual Subtitles" — realistic player mockup, optimized for 50% readability -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#141414"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#b81d13" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#b81d13" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Cinematic scene inside player -->
+    <linearGradient id="scene" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a2030"/>
+      <stop offset="30%" stop-color="#0d1520"/>
+      <stop offset="70%" stop-color="#151a10"/>
+      <stop offset="100%" stop-color="#0a1018"/>
+    </linearGradient>
+    <!-- Bottom vignette -->
+    <linearGradient id="vig-bot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.9"/>
+    </linearGradient>
+    <!-- Top vignette -->
+    <linearGradient id="vig-top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="35%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Clip for player rounded corners -->
+    <clipPath id="player-clip">
+      <rect x="220" y="120" width="960" height="416" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Overall background -->
+  <rect width="1400" height="560" fill="url(#bg)"/>
+  <rect width="1400" height="560" fill="url(#glow)"/>
+  <rect x="0.5" y="0.5" width="1399" height="559" fill="none" stroke="#333" stroke-width="1"/>
+
+  <!-- === TOP SECTION: Icon + Name inline === -->
+  <g transform="translate(560, 30)">
+    <rect width="44" height="44" rx="9" fill="#0f0f0f"/>
+    <polygon points="13,6 13,22 33,14" fill="#b81d13"/>
+    <rect x="6" y="30" width="32" height="4" rx="2" fill="#b81d13"/>
+    <rect x="6" y="37" width="32" height="4" rx="2" fill="#b81d13"/>
+    <text x="56" y="30" text-anchor="start"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+          font-size="36" font-weight="700" letter-spacing="-0.5" fill="#ffffff">
+      LinguaFlix
+    </text>
+  </g>
+
+  <text x="700" y="100" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+        font-size="14" font-weight="400" letter-spacing="3" fill="#999999">
+    PAUSE. LEARN. PLAY.
+  </text>
+
+  <!-- === MOCK PLAYER AREA (clipped for clean rounded corners) === -->
+  <g clip-path="url(#player-clip)">
+    <!-- Scene background -->
+    <rect x="220" y="120" width="960" height="416" fill="url(#scene)"/>
+
+    <!-- Cinematic light patches -->
+    <ellipse cx="580" cy="290" rx="200" ry="110" fill="#2a3548" opacity="0.35"/>
+    <ellipse cx="820" cy="330" rx="150" ry="85" fill="#1d2818" opacity="0.25"/>
+    <ellipse cx="700" cy="260" rx="100" ry="55" fill="#3a4050" opacity="0.15"/>
+
+    <!-- Vignettes -->
+    <rect x="220" y="120" width="960" height="416" fill="url(#vig-bot)"/>
+    <rect x="220" y="120" width="960" height="416" fill="url(#vig-top)"/>
+
+    <!-- === LINGUAFLIX SUBTITLE (top area, green border box) === -->
+    <g transform="translate(410, 170)">
+      <rect x="0" y="0" width="580" height="68" rx="10" fill="#000000" fill-opacity="0.9"
+            stroke="#4CAF50" stroke-width="2.5"/>
+      <text x="290" y="42" text-anchor="middle"
+            font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+            font-size="28" font-weight="500" fill="#ffffff">
+        Son más activos por la noche.
+      </text>
+    </g>
+
+    <!-- Label: Learning -->
+    <text x="370" y="195" text-anchor="end"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+          font-size="14" font-weight="600" fill="#4CAF50" opacity="0.8">
+      Learning
+    </text>
+    <line x1="376" y1="192" x2="406" y2="200" stroke="#4CAF50" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- === NETFLIX SUBTITLE (above controls, white bold with shadow) === -->
+    <text x="700" y="418" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+          font-size="28" font-weight="700" fill="#000000" opacity="0.8">
+      They get more active after dark sometimes.
+    </text>
+    <text x="700" y="416" text-anchor="middle"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+          font-size="28" font-weight="700" fill="#ffffff">
+      They get more active after dark sometimes.
+    </text>
+
+    <!-- Label: Original -->
+    <text x="370" y="410" text-anchor="end"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+          font-size="14" font-weight="600" fill="#ffffff" opacity="0.45">
+      Original
+    </text>
+    <line x1="376" y1="407" x2="406" y2="413" stroke="#ffffff" stroke-width="1.5" opacity="0.3"/>
+
+    <!-- === CONTROLS BAR === -->
+    <rect x="220" y="460" width="960" height="76" fill="#181818"/>
+    <line x1="220" y1="460" x2="1180" y2="460" stroke="#444444" stroke-width="1.5"/>
+
+    <!-- Progress bar track -->
+    <rect x="250" y="474" width="900" height="5" rx="2.5" fill="#555555"/>
+    <!-- Progress bar filled (red) -->
+    <rect x="250" y="474" width="360" height="5" rx="2.5" fill="#e50914"/>
+    <!-- Progress dot -->
+    <circle cx="610" cy="476.5" r="8" fill="#e50914"/>
+
+    <!-- Play button -->
+    <polygon points="260,496 260,520 282,508" fill="#ffffff"/>
+
+    <!-- Timestamp -->
+    <text x="1150" y="514" text-anchor="end"
+          font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+          font-size="14" font-weight="400" fill="#ffffff" opacity="0.6">
+      24:09
+    </text>
+  </g>
+
+  <!-- Player border -->
+  <rect x="220" y="120" width="960" height="416" rx="12" fill="none" stroke="#333" stroke-width="1"/>
+
+  <!-- === BOTTOM ACCENT === -->
+  <rect x="0" y="548" width="1400" height="12" fill="#b81d13" opacity="0.8"/>
+</svg>
