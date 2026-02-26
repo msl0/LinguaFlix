@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://linguaflix.marcinslowikowski.com/</loc>
+    <lastmod>2026-02-27</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://linguaflix.marcinslowikowski.com/promo/youtube-thumbnail-1280x720.png</video:thumbnail_loc>
+      <video:title>LinguaFlix — Setup &amp; Demo | Learn Languages on Netflix</video:title>
+      <video:description>Learn languages while watching Netflix — just pause and see subtitles in your chosen language. LinguaFlix is a free, privacy-friendly Chrome extension with no tracking and no data collection. Supports 17 languages: English, Polish, German, French, Spanish, Italian, Portuguese, Russian, Japanese, Korean, Chinese, Turkish, Dutch, Swedish, Arabic, Czech, and Ukrainian.</video:description>
+      <video:content_loc>https://www.youtube.com/watch?v=52YYRb15R0w</video:content_loc>
+      <video:player_loc>https://www.youtube.com/embed/52YYRb15R0w</video:player_loc>
+      <video:duration>43</video:duration>
+      <video:publication_date>2026-02-25T14:06:59-08:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:uploader info="https://www.youtube.com/@Marcin_S%C5%82owikowski">Marcin Słowikowski</video:uploader>
+      <video:tag>LinguaFlix</video:tag>
+      <video:tag>learn languages Netflix</video:tag>
+      <video:tag>dual subtitles Netflix</video:tag>
+      <video:tag>Netflix language learning</video:tag>
+      <video:tag>Chrome extension language learning</video:tag>
+      <video:tag>Netflix subtitles second language</video:tag>
+    </video:video>
+  </url>
+</urlset>
