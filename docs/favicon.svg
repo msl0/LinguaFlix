@@ -1,0 +1,18 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definiujemy maskę dla zaokrąglonych rogów -->
+  <defs>
+    <mask id="roundedCorners">
+      <rect width="128" height="128" fill="white" rx="24"/>
+    </mask>
+  </defs>
+  
+  <!-- Black background with rounded corners -->
+  <rect width="128" height="128" fill="#0f0f0f" rx="24"/>
+  
+  <!-- Play button - larger solid triangle, higher -->
+  <polygon points="36,18 36,62 92,40" fill="#b81d13"/>
+  
+  <!-- Subtitle lines - 2 lines, thicker, lower, wider -->
+  <rect x="16" y="86" width="96" height="12" fill="#b81d13" rx="6"/>
+  <rect x="16" y="104" width="96" height="12" fill="#b81d13" rx="6"/>
+</svg>
