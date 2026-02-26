@@ -351,10 +351,6 @@
         padding: 0 12px;
       }
 
-      .screenshots img {
-        border-radius: 4px;
-      }
-
       .screenshots figure {
         width: auto;
         max-width: 100%;
@@ -366,6 +362,7 @@
         height: auto;
         max-width: 85vw;
         max-height: 35vh;
+        border-radius: 4px;
       }
     }
   </style>
@@ -374,7 +371,8 @@
 
   <!-- Hero -->
   <div class="hero">
-    <svg class="hero-icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <svg class="hero-icon" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LinguaFlix logo">
+      <title>LinguaFlix logo</title>
       <rect width="128" height="128" fill="#0f0f0f" rx="24"/>
       <polygon points="36,18 36,62 92,40" fill="#b81d13"/>
       <rect x="16" y="86" width="96" height="12" fill="#b81d13" rx="6"/>
@@ -383,7 +381,7 @@
     <h1>Lingua<span>Flix</span></h1>
     <p>Show secondary subtitles in your language when you pause Netflix. Learn languages while watching your favorite shows.</p>
     <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
       Add to Chrome — It's Free
     </a>
   </div>
@@ -454,7 +452,7 @@
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="">
+    <img id="lightbox-img" src="" alt="Screenshot preview">
   </div>
 
   <!-- Video -->
@@ -477,7 +475,7 @@
     <h2>Start Learning with Netflix Today</h2>
     <p>Free and open source. Takes 2 seconds to install.</p>
     <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
       Add to Chrome — It's Free
     </a>
   </div>
@@ -492,10 +490,43 @@
   </footer>
 
   <script>
+    /**
+     * Basic validation for image src attributes used in the lightbox.
+     * Only allow http/https or data:image URLs.
+     * @param {string} src
+     * @returns {boolean}
+     */
+    function isSafeImageSrc(src) {
+      if (typeof src !== 'string') return false;
+      var trimmed = src.trim();
+      if (!trimmed) return false;
+      // Allow standard web URLs or data URLs for images
+      return (
+        trimmed.startsWith('https://') ||
+        trimmed.startsWith('http://') ||
+        trimmed.startsWith('data:image')
+      );
+    }
+
     function openLightbox(img) {
+      // Ensure we only operate on real <img> elements
+      if (!(img instanceof HTMLImageElement)) {
+        return;
+      }
+
       var lb = document.getElementById('lightbox');
-      document.getElementById('lightbox-img').src = img.src;
-      document.getElementById('lightbox-img').alt = img.alt;
+      var lightboxImg = document.getElementById('lightbox-img');
+
+      // Read raw attributes to avoid surprises from mutated properties
+      var src = img.getAttribute('src') || '';
+      var alt = img.getAttribute('alt') || '';
+
+      if (!isSafeImageSrc(src)) {
+        return;
+      }
+
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
       lb.classList.add('active');
     }
     function closeLightbox() {
