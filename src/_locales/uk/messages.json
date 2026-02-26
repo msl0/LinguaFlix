@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Вивчайте мови на Netflix — поставте на паузу, щоб побачити додаткові субтитри обраною мовою"
+  },
+  "settingsButton": {
+    "message": "Налаштування"
+  },
+  "settingsTitle": {
+    "message": "Налаштування LinguaFlix"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Мова субтитрів на паузі:"
+  },
+  "langPolish": {
+    "message": "Польська (Polski)"
+  },
+  "langEnglish": {
+    "message": "Англійська (English)"
+  },
+  "langGerman": {
+    "message": "Німецька (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Французька (Français)"
+  },
+  "langSpanish": {
+    "message": "Іспанська (Español)"
+  },
+  "langItalian": {
+    "message": "Італійська (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Португальська (Português)"
+  },
+  "langRussian": {
+    "message": "Російська (Русский)"
+  },
+  "langJapanese": {
+    "message": "Японська (日本語)"
+  },
+  "langKorean": {
+    "message": "Корейська (한국어)"
+  },
+  "langChinese": {
+    "message": "Китайська (中文)"
+  },
+  "langTurkish": {
+    "message": "Турецька (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Нідерландська (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "Шведська (Svenska)"
+  },
+  "langArabic": {
+    "message": "Арабська (العربية)"
+  },
+  "langCzech": {
+    "message": "Чеська (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Українська"
+  },
+  "infoText": {
+    "message": "Коли ви ставите Netflix на паузу, ви побачите субтитри обраною мовою поверх відео. Коли відтворення відновиться, вони зникнуть, і Netflix покаже субтитри як зазвичай"
+  },
+  "preferCC": {
+    "message": "Віддавати перевагу субтитрам для людей з вадами слуху (CC)"
+  },
+  "ccInfoText": {
+    "message": "Використовувати субтитри для людей з вадами слуху замість звичайних, коли вони доступні"
+  },
+  "saveSettings": {
+    "message": "Зберегти налаштування"
+  },
+  "resetToDefault": {
+    "message": "Скинути до стандартних"
+  },
+  "errorLoading": {
+    "message": "Помилка завантаження налаштувань"
+  },
+  "errorSelectLanguage": {
+    "message": "Будь ласка, оберіть мову"
+  },
+  "settingsSaved": {
+    "message": "✓ Налаштування збережено! Перезавантажте Netflix, щоб застосувати зміни."
+  },
+  "errorSaving": {
+    "message": "✗ Помилка збереження налаштувань"
+  },
+  "resetDone": {
+    "message": "✓ Скинуто до стандартних"
+  },
+  "errorResetting": {
+    "message": "✗ Помилка скидання налаштувань"
+  }
+}

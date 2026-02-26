@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Sprachen lernen auf Netflix – pausiere, um zusätzliche Untertitel in deiner gewählten Sprache zu sehen"
+  },
+  "settingsButton": {
+    "message": "Einstellungen"
+  },
+  "settingsTitle": {
+    "message": "LinguaFlix-Einstellungen"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Untertitelsprache beim Pausieren:"
+  },
+  "langPolish": {
+    "message": "Polnisch (Polski)"
+  },
+  "langEnglish": {
+    "message": "Englisch (English)"
+  },
+  "langGerman": {
+    "message": "Deutsch"
+  },
+  "langFrench": {
+    "message": "Französisch (Français)"
+  },
+  "langSpanish": {
+    "message": "Spanisch (Español)"
+  },
+  "langItalian": {
+    "message": "Italienisch (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Portugiesisch (Português)"
+  },
+  "langRussian": {
+    "message": "Russisch (Русский)"
+  },
+  "langJapanese": {
+    "message": "Japanisch (日本語)"
+  },
+  "langKorean": {
+    "message": "Koreanisch (한국어)"
+  },
+  "langChinese": {
+    "message": "Chinesisch (中文)"
+  },
+  "langTurkish": {
+    "message": "Türkisch (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Niederländisch (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "Schwedisch (Svenska)"
+  },
+  "langArabic": {
+    "message": "Arabisch (العربية)"
+  },
+  "langCzech": {
+    "message": "Tschechisch (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Ukrainisch (Українська)"
+  },
+  "infoText": {
+    "message": "Wenn du Netflix pausierst, siehst du Untertitel in deiner gewählten Sprache über dem Video. Beim Weiterspielen verschwinden sie und Netflix zeigt die Untertitel wie gewohnt"
+  },
+  "preferCC": {
+    "message": "Untertitel für Hörgeschädigte (CC) bevorzugen"
+  },
+  "ccInfoText": {
+    "message": "Untertitel für Hörgeschädigte anstelle normaler Untertitel verwenden, wenn verfügbar"
+  },
+  "saveSettings": {
+    "message": "Einstellungen speichern"
+  },
+  "resetToDefault": {
+    "message": "Auf Standard zurücksetzen"
+  },
+  "errorLoading": {
+    "message": "Fehler beim Laden der Einstellungen"
+  },
+  "errorSelectLanguage": {
+    "message": "Bitte wähle eine Sprache"
+  },
+  "settingsSaved": {
+    "message": "✓ Einstellungen gespeichert! Lade Netflix neu, um die Änderungen anzuwenden."
+  },
+  "errorSaving": {
+    "message": "✗ Fehler beim Speichern der Einstellungen"
+  },
+  "resetDone": {
+    "message": "✓ Auf Standard zurückgesetzt"
+  },
+  "errorResetting": {
+    "message": "✗ Fehler beim Zurücksetzen der Einstellungen"
+  }
+}

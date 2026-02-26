@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Netflix에서 언어를 배우세요 — 일시정지하면 선택한 언어의 추가 자막이 표시됩니다"
+  },
+  "settingsButton": {
+    "message": "설정"
+  },
+  "settingsTitle": {
+    "message": "LinguaFlix 설정"
+  },
+  "subtitleLanguageLabel": {
+    "message": "일시정지 시 자막 언어:"
+  },
+  "langPolish": {
+    "message": "폴란드어 (Polski)"
+  },
+  "langEnglish": {
+    "message": "영어 (English)"
+  },
+  "langGerman": {
+    "message": "독일어 (Deutsch)"
+  },
+  "langFrench": {
+    "message": "프랑스어 (Français)"
+  },
+  "langSpanish": {
+    "message": "스페인어 (Español)"
+  },
+  "langItalian": {
+    "message": "이탈리아어 (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "포르투갈어 (Português)"
+  },
+  "langRussian": {
+    "message": "러시아어 (Русский)"
+  },
+  "langJapanese": {
+    "message": "일본어 (日本語)"
+  },
+  "langKorean": {
+    "message": "한국어"
+  },
+  "langChinese": {
+    "message": "중국어 (中文)"
+  },
+  "langTurkish": {
+    "message": "터키어 (Türkçe)"
+  },
+  "langDutch": {
+    "message": "네덜란드어 (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "스웨덴어 (Svenska)"
+  },
+  "langArabic": {
+    "message": "아랍어 (العربية)"
+  },
+  "langCzech": {
+    "message": "체코어 (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "우크라이나어 (Українська)"
+  },
+  "infoText": {
+    "message": "Netflix를 일시정지하면 선택한 언어의 자막이 비디오 위에 표시됩니다. 재생을 재개하면 사라지고 Netflix가 평소처럼 자막을 표시합니다"
+  },
+  "preferCC": {
+    "message": "청각 장애인용 자막(CC) 우선"
+  },
+  "ccInfoText": {
+    "message": "이용 가능한 경우 일반 자막 대신 청각 장애인용 자막을 사용합니다"
+  },
+  "saveSettings": {
+    "message": "설정 저장"
+  },
+  "resetToDefault": {
+    "message": "기본값으로 재설정"
+  },
+  "errorLoading": {
+    "message": "설정 로드 오류"
+  },
+  "errorSelectLanguage": {
+    "message": "언어를 선택하세요"
+  },
+  "settingsSaved": {
+    "message": "✓ 설정이 저장되었습니다! 변경 사항을 적용하려면 Netflix를 새로고침하세요."
+  },
+  "errorSaving": {
+    "message": "✗ 설정 저장 오류"
+  },
+  "resetDone": {
+    "message": "✓ 기본값으로 재설정되었습니다"
+  },
+  "errorResetting": {
+    "message": "✗ 설정 재설정 오류"
+  }
+}

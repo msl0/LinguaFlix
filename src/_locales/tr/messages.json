@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Netflix'te dil öğrenin — duraklatarak seçtiğiniz dilde ek altyazıları görün"
+  },
+  "settingsButton": {
+    "message": "Ayarlar"
+  },
+  "settingsTitle": {
+    "message": "LinguaFlix Ayarları"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Duraklatıldığında altyazı dili:"
+  },
+  "langPolish": {
+    "message": "Lehçe (Polski)"
+  },
+  "langEnglish": {
+    "message": "İngilizce (English)"
+  },
+  "langGerman": {
+    "message": "Almanca (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Fransızca (Français)"
+  },
+  "langSpanish": {
+    "message": "İspanyolca (Español)"
+  },
+  "langItalian": {
+    "message": "İtalyanca (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Portekizce (Português)"
+  },
+  "langRussian": {
+    "message": "Rusça (Русский)"
+  },
+  "langJapanese": {
+    "message": "Japonca (日本語)"
+  },
+  "langKorean": {
+    "message": "Korece (한국어)"
+  },
+  "langChinese": {
+    "message": "Çince (中文)"
+  },
+  "langTurkish": {
+    "message": "Türkçe"
+  },
+  "langDutch": {
+    "message": "Hollandaca (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "İsveççe (Svenska)"
+  },
+  "langArabic": {
+    "message": "Arapça (العربية)"
+  },
+  "langCzech": {
+    "message": "Çekçe (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Ukraynaca (Українська)"
+  },
+  "infoText": {
+    "message": "Netflix'i duraklatınca, seçtiğiniz dildeki altyazıları videonun üzerinde göreceksiniz. Oynatmaya devam edince kaybolur ve Netflix altyazıları her zamanki gibi gösterir"
+  },
+  "preferCC": {
+    "message": "İşitme engelliler için altyazıları (CC) tercih et"
+  },
+  "ccInfoText": {
+    "message": "Mevcut olduğunda normal altyazılar yerine işitme engelliler için altyazıları kullan"
+  },
+  "saveSettings": {
+    "message": "Ayarları kaydet"
+  },
+  "resetToDefault": {
+    "message": "Varsayılana sıfırla"
+  },
+  "errorLoading": {
+    "message": "Ayarlar yüklenirken hata oluştu"
+  },
+  "errorSelectLanguage": {
+    "message": "Lütfen bir dil seçin"
+  },
+  "settingsSaved": {
+    "message": "✓ Ayarlar kaydedildi! Değişiklikleri uygulamak için Netflix'i yeniden yükleyin."
+  },
+  "errorSaving": {
+    "message": "✗ Ayarlar kaydedilirken hata oluştu"
+  },
+  "resetDone": {
+    "message": "✓ Varsayılana sıfırlandı"
+  },
+  "errorResetting": {
+    "message": "✗ Ayarlar sıfırlanırken hata oluştu"
+  }
+}

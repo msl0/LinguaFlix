@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Učte se jazyky na Netflixu – pozastavte přehrávání a uvidíte další titulky ve zvoleném jazyce"
+  },
+  "settingsButton": {
+    "message": "Nastavení"
+  },
+  "settingsTitle": {
+    "message": "Nastavení LinguaFlix"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Jazyk titulků při pozastavení:"
+  },
+  "langPolish": {
+    "message": "Polština (Polski)"
+  },
+  "langEnglish": {
+    "message": "Angličtina (English)"
+  },
+  "langGerman": {
+    "message": "Němčina (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Francouzština (Français)"
+  },
+  "langSpanish": {
+    "message": "Španělština (Español)"
+  },
+  "langItalian": {
+    "message": "Italština (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Portugalština (Português)"
+  },
+  "langRussian": {
+    "message": "Ruština (Русский)"
+  },
+  "langJapanese": {
+    "message": "Japonština (日本語)"
+  },
+  "langKorean": {
+    "message": "Korejština (한국어)"
+  },
+  "langChinese": {
+    "message": "Čínština (中文)"
+  },
+  "langTurkish": {
+    "message": "Turečtina (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Nizozemština (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "Švédština (Svenska)"
+  },
+  "langArabic": {
+    "message": "Arabština (العربية)"
+  },
+  "langCzech": {
+    "message": "Čeština"
+  },
+  "langUkrainian": {
+    "message": "Ukrajinština (Українська)"
+  },
+  "infoText": {
+    "message": "Když pozastavíte Netflix, uvidíte titulky ve zvoleném jazyce nad videem. Když pustíte přehrávání, zmizí a Netflix zobrazí titulky jako obvykle"
+  },
+  "preferCC": {
+    "message": "Upřednostnit titulky pro neslyšící (CC)"
+  },
+  "ccInfoText": {
+    "message": "Používat titulky pro neslyšící místo běžných titulků, pokud jsou k dispozici"
+  },
+  "saveSettings": {
+    "message": "Uložit nastavení"
+  },
+  "resetToDefault": {
+    "message": "Obnovit výchozí"
+  },
+  "errorLoading": {
+    "message": "Chyba při načítání nastavení"
+  },
+  "errorSelectLanguage": {
+    "message": "Vyberte prosím jazyk"
+  },
+  "settingsSaved": {
+    "message": "✓ Nastavení uloženo! Pro použití změn znovu načtěte Netflix."
+  },
+  "errorSaving": {
+    "message": "✗ Chyba při ukládání nastavení"
+  },
+  "resetDone": {
+    "message": "✓ Obnoveno na výchozí"
+  },
+  "errorResetting": {
+    "message": "✗ Chyba při obnovování nastavení"
+  }
+}

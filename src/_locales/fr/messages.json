@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Apprenez des langues sur Netflix – mettez en pause pour voir des sous-titres supplémentaires dans la langue de votre choix"
+  },
+  "settingsButton": {
+    "message": "Paramètres"
+  },
+  "settingsTitle": {
+    "message": "Paramètres LinguaFlix"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Langue des sous-titres en pause :"
+  },
+  "langPolish": {
+    "message": "Polonais (Polski)"
+  },
+  "langEnglish": {
+    "message": "Anglais (English)"
+  },
+  "langGerman": {
+    "message": "Allemand (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Français"
+  },
+  "langSpanish": {
+    "message": "Espagnol (Español)"
+  },
+  "langItalian": {
+    "message": "Italien (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Portugais (Português)"
+  },
+  "langRussian": {
+    "message": "Russe (Русский)"
+  },
+  "langJapanese": {
+    "message": "Japonais (日本語)"
+  },
+  "langKorean": {
+    "message": "Coréen (한국어)"
+  },
+  "langChinese": {
+    "message": "Chinois (中文)"
+  },
+  "langTurkish": {
+    "message": "Turc (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Néerlandais (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "Suédois (Svenska)"
+  },
+  "langArabic": {
+    "message": "Arabe (العربية)"
+  },
+  "langCzech": {
+    "message": "Tchèque (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Ukrainien (Українська)"
+  },
+  "infoText": {
+    "message": "Lorsque vous mettez Netflix en pause, vous verrez les sous-titres dans la langue choisie au-dessus de la vidéo. Quand vous reprenez la lecture, ils disparaissent et Netflix affiche les sous-titres comme d'habitude"
+  },
+  "preferCC": {
+    "message": "Préférer les sous-titres pour malentendants (CC)"
+  },
+  "ccInfoText": {
+    "message": "Utiliser les sous-titres pour malentendants au lieu des sous-titres classiques quand ils sont disponibles"
+  },
+  "saveSettings": {
+    "message": "Enregistrer les paramètres"
+  },
+  "resetToDefault": {
+    "message": "Réinitialiser par défaut"
+  },
+  "errorLoading": {
+    "message": "Erreur de chargement des paramètres"
+  },
+  "errorSelectLanguage": {
+    "message": "Veuillez sélectionner une langue"
+  },
+  "settingsSaved": {
+    "message": "✓ Paramètres enregistrés ! Rechargez Netflix pour appliquer les modifications."
+  },
+  "errorSaving": {
+    "message": "✗ Erreur lors de l'enregistrement des paramètres"
+  },
+  "resetDone": {
+    "message": "✓ Réinitialisé par défaut"
+  },
+  "errorResetting": {
+    "message": "✗ Erreur lors de la réinitialisation des paramètres"
+  }
+}
