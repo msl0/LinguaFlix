@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "تعلّم اللغات على Netflix — أوقف مؤقتاً لرؤية ترجمات إضافية باللغة التي تختارها"
+  },
+  "settingsButton": {
+    "message": "الإعدادات"
+  },
+  "settingsTitle": {
+    "message": "إعدادات LinguaFlix"
+  },
+  "subtitleLanguageLabel": {
+    "message": "لغة الترجمة عند الإيقاف المؤقت:"
+  },
+  "langPolish": {
+    "message": "البولندية (Polski)"
+  },
+  "langEnglish": {
+    "message": "الإنجليزية (English)"
+  },
+  "langGerman": {
+    "message": "الألمانية (Deutsch)"
+  },
+  "langFrench": {
+    "message": "الفرنسية (Français)"
+  },
+  "langSpanish": {
+    "message": "الإسبانية (Español)"
+  },
+  "langItalian": {
+    "message": "الإيطالية (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "البرتغالية (Português)"
+  },
+  "langRussian": {
+    "message": "الروسية (Русский)"
+  },
+  "langJapanese": {
+    "message": "اليابانية (日本語)"
+  },
+  "langKorean": {
+    "message": "الكورية (한국어)"
+  },
+  "langChinese": {
+    "message": "الصينية (中文)"
+  },
+  "langTurkish": {
+    "message": "التركية (Türkçe)"
+  },
+  "langDutch": {
+    "message": "الهولندية (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "السويدية (Svenska)"
+  },
+  "langArabic": {
+    "message": "العربية"
+  },
+  "langCzech": {
+    "message": "التشيكية (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "الأوكرانية (Українська)"
+  },
+  "infoText": {
+    "message": "عندما توقف Netflix مؤقتاً، سترى الترجمات باللغة المختارة فوق الفيديو. عند استئناف التشغيل، تختفي ويعرض Netflix الترجمات كالمعتاد"
+  },
+  "preferCC": {
+    "message": "تفضيل الترجمات المغلقة (CC)"
+  },
+  "ccInfoText": {
+    "message": "استخدام الترجمات المغلقة بدلاً من الترجمات العادية عند توفرها"
+  },
+  "saveSettings": {
+    "message": "حفظ الإعدادات"
+  },
+  "resetToDefault": {
+    "message": "إعادة التعيين إلى الافتراضي"
+  },
+  "errorLoading": {
+    "message": "خطأ في تحميل الإعدادات"
+  },
+  "errorSelectLanguage": {
+    "message": "يرجى اختيار لغة"
+  },
+  "settingsSaved": {
+    "message": "✓ تم حفظ الإعدادات! أعد تحميل Netflix لتطبيق التغييرات."
+  },
+  "errorSaving": {
+    "message": "✗ خطأ في حفظ الإعدادات"
+  },
+  "resetDone": {
+    "message": "✓ تمت إعادة التعيين إلى الافتراضي"
+  },
+  "errorResetting": {
+    "message": "✗ خطأ في إعادة تعيين الإعدادات"
+  }
+}

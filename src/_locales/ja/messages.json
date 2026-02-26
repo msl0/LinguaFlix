@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Netflixで言語を学ぼう — 一時停止して選んだ言語の追加字幕を表示"
+  },
+  "settingsButton": {
+    "message": "設定"
+  },
+  "settingsTitle": {
+    "message": "LinguaFlix 設定"
+  },
+  "subtitleLanguageLabel": {
+    "message": "一時停止中の字幕言語："
+  },
+  "langPolish": {
+    "message": "ポーランド語 (Polski)"
+  },
+  "langEnglish": {
+    "message": "英語 (English)"
+  },
+  "langGerman": {
+    "message": "ドイツ語 (Deutsch)"
+  },
+  "langFrench": {
+    "message": "フランス語 (Français)"
+  },
+  "langSpanish": {
+    "message": "スペイン語 (Español)"
+  },
+  "langItalian": {
+    "message": "イタリア語 (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "ポルトガル語 (Português)"
+  },
+  "langRussian": {
+    "message": "ロシア語 (Русский)"
+  },
+  "langJapanese": {
+    "message": "日本語"
+  },
+  "langKorean": {
+    "message": "韓国語 (한국어)"
+  },
+  "langChinese": {
+    "message": "中国語 (中文)"
+  },
+  "langTurkish": {
+    "message": "トルコ語 (Türkçe)"
+  },
+  "langDutch": {
+    "message": "オランダ語 (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "スウェーデン語 (Svenska)"
+  },
+  "langArabic": {
+    "message": "アラビア語 (العربية)"
+  },
+  "langCzech": {
+    "message": "チェコ語 (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "ウクライナ語 (Українська)"
+  },
+  "infoText": {
+    "message": "Netflixを一時停止すると、選んだ言語の字幕がビデオの上に表示されます。再生を再開すると字幕は消え、Netflixは通常通り字幕を表示します"
+  },
+  "preferCC": {
+    "message": "クローズドキャプション (CC) を優先"
+  },
+  "ccInfoText": {
+    "message": "利用可能な場合、通常の字幕の代わりにクローズドキャプションを使用します"
+  },
+  "saveSettings": {
+    "message": "設定を保存"
+  },
+  "resetToDefault": {
+    "message": "デフォルトに戻す"
+  },
+  "errorLoading": {
+    "message": "設定の読み込みエラー"
+  },
+  "errorSelectLanguage": {
+    "message": "言語を選択してください"
+  },
+  "settingsSaved": {
+    "message": "✓ 設定が保存されました！変更を適用するにはNetflixを再読み込みしてください。"
+  },
+  "errorSaving": {
+    "message": "✗ 設定の保存エラー"
+  },
+  "resetDone": {
+    "message": "✓ デフォルトに戻しました"
+  },
+  "errorResetting": {
+    "message": "✗ 設定のリセットエラー"
+  }
+}

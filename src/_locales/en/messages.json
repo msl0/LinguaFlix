@@ -63,6 +63,30 @@
     "message": "Chinese (中文)",
     "description": "Chinese language option"
   },
+  "langTurkish": {
+    "message": "Turkish (Türkçe)",
+    "description": "Turkish language option"
+  },
+  "langDutch": {
+    "message": "Dutch (Nederlands)",
+    "description": "Dutch language option"
+  },
+  "langSwedish": {
+    "message": "Swedish (Svenska)",
+    "description": "Swedish language option"
+  },
+  "langArabic": {
+    "message": "Arabic (العربية)",
+    "description": "Arabic language option"
+  },
+  "langCzech": {
+    "message": "Czech (Čeština)",
+    "description": "Czech language option"
+  },
+  "langUkrainian": {
+    "message": "Ukrainian (Українська)",
+    "description": "Ukrainian language option"
+  },
   "infoText": {
     "message": "When you pause Netflix, you'll see subtitles in your chosen language on top of the video. When you play again, they disappear and Netflix shows subtitles as usual",
     "description": "Explanation of how the extension works"

@@ -47,6 +47,24 @@
   "langChinese": {
     "message": "Chiński (中文)"
   },
+  "langTurkish": {
+    "message": "Turecki (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Holenderski (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "Szwedzki (Svenska)"
+  },
+  "langArabic": {
+    "message": "Arabski (العربية)"
+  },
+  "langCzech": {
+    "message": "Czeski (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Ukraiński (Українська)"
+  },
   "infoText": {
     "message": "Gdy zatrzymasz Netflix, zobaczysz napisy w wybranym języku na ekranie. Gdy wznowisz odtwarzanie, znikną i Netflix pokaże napisy jak zwykle"
   },

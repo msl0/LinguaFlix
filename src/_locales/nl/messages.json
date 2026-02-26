@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Leer talen op Netflix – pauzeer om extra ondertitels in je gekozen taal te zien"
+  },
+  "settingsButton": {
+    "message": "Instellingen"
+  },
+  "settingsTitle": {
+    "message": "LinguaFlix-instellingen"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Ondertiteltaal bij pauzeren:"
+  },
+  "langPolish": {
+    "message": "Pools (Polski)"
+  },
+  "langEnglish": {
+    "message": "Engels (English)"
+  },
+  "langGerman": {
+    "message": "Duits (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Frans (Français)"
+  },
+  "langSpanish": {
+    "message": "Spaans (Español)"
+  },
+  "langItalian": {
+    "message": "Italiaans (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Portugees (Português)"
+  },
+  "langRussian": {
+    "message": "Russisch (Русский)"
+  },
+  "langJapanese": {
+    "message": "Japans (日本語)"
+  },
+  "langKorean": {
+    "message": "Koreaans (한국어)"
+  },
+  "langChinese": {
+    "message": "Chinees (中文)"
+  },
+  "langTurkish": {
+    "message": "Turks (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Nederlands"
+  },
+  "langSwedish": {
+    "message": "Zweeds (Svenska)"
+  },
+  "langArabic": {
+    "message": "Arabisch (العربية)"
+  },
+  "langCzech": {
+    "message": "Tsjechisch (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Oekraïens (Українська)"
+  },
+  "infoText": {
+    "message": "Wanneer je Netflix pauzeert, zie je ondertitels in je gekozen taal bovenop de video. Wanneer je weer afspeelt, verdwijnen ze en toont Netflix de ondertitels zoals gewoonlijk"
+  },
+  "preferCC": {
+    "message": "Voorkeur voor ondertitels voor slechthorenden (CC)"
+  },
+  "ccInfoText": {
+    "message": "Gebruik ondertitels voor slechthorenden in plaats van gewone ondertitels wanneer beschikbaar"
+  },
+  "saveSettings": {
+    "message": "Instellingen opslaan"
+  },
+  "resetToDefault": {
+    "message": "Standaard herstellen"
+  },
+  "errorLoading": {
+    "message": "Fout bij het laden van instellingen"
+  },
+  "errorSelectLanguage": {
+    "message": "Selecteer een taal"
+  },
+  "settingsSaved": {
+    "message": "✓ Instellingen opgeslagen! Herlaad Netflix om de wijzigingen toe te passen."
+  },
+  "errorSaving": {
+    "message": "✗ Fout bij het opslaan van instellingen"
+  },
+  "resetDone": {
+    "message": "✓ Standaard hersteld"
+  },
+  "errorResetting": {
+    "message": "✗ Fout bij het herstellen van instellingen"
+  }
+}

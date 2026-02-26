@@ -4,6 +4,9 @@
 
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bllbooanjfhngljkndcaehbojpdhooka?style=flat-square)](https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka)
 
+[![Edge Add-on](https://img.shields.io/badge/dynamic/json?style=flat-square&label=edge%20add-on&prefix=v&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fjlldpadnheggflcjmikklpepdkojglaa)](https://microsoftedge.microsoft.com/addons/detail/linguaflix/jlldpadnheggflcjmikklpepdkojglaa)
+
+
 <p align="center">
   <img src="docs/screenshots/1-1280x800.jpg" alt="LinguaFlix overlay showing Polish subtitles while English subtitles play on Netflix" width="720">
   <br>
@@ -37,9 +40,12 @@ Under the hood, the extension detects when Netflix loads subtitle files, parses 
 
 ## Installation
 
-### From the Chrome Web Store
+### From your browser's store
 
-Install [LinguaFlix](https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka) directly from the Chrome Web Store — one click, no setup needed.
+- **Chrome** — [Chrome Web Store](https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka)
+- **Edge** — [Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/linguaflix/jlldpadnheggflcjmikklpepdkojglaa)
+
+One click, no setup needed.
 
 ### From source (developer mode)
 

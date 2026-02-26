@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Изучайте языки на Netflix — поставьте на паузу, чтобы увидеть дополнительные субтитры на выбранном языке"
+  },
+  "settingsButton": {
+    "message": "Настройки"
+  },
+  "settingsTitle": {
+    "message": "Настройки LinguaFlix"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Язык субтитров на паузе:"
+  },
+  "langPolish": {
+    "message": "Польский (Polski)"
+  },
+  "langEnglish": {
+    "message": "Английский (English)"
+  },
+  "langGerman": {
+    "message": "Немецкий (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Французский (Français)"
+  },
+  "langSpanish": {
+    "message": "Испанский (Español)"
+  },
+  "langItalian": {
+    "message": "Итальянский (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Португальский (Português)"
+  },
+  "langRussian": {
+    "message": "Русский"
+  },
+  "langJapanese": {
+    "message": "Японский (日本語)"
+  },
+  "langKorean": {
+    "message": "Корейский (한국어)"
+  },
+  "langChinese": {
+    "message": "Китайский (中文)"
+  },
+  "langTurkish": {
+    "message": "Турецкий (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Нидерландский (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "Шведский (Svenska)"
+  },
+  "langArabic": {
+    "message": "Арабский (العربية)"
+  },
+  "langCzech": {
+    "message": "Чешский (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Украинский (Українська)"
+  },
+  "infoText": {
+    "message": "Когда вы ставите Netflix на паузу, вы увидите субтитры на выбранном языке поверх видео. При возобновлении воспроизведения они исчезают, и Netflix показывает субтитры как обычно"
+  },
+  "preferCC": {
+    "message": "Предпочитать субтитры для слабослышащих (CC)"
+  },
+  "ccInfoText": {
+    "message": "Использовать субтитры для слабослышащих вместо обычных, когда они доступны"
+  },
+  "saveSettings": {
+    "message": "Сохранить настройки"
+  },
+  "resetToDefault": {
+    "message": "Сбросить по умолчанию"
+  },
+  "errorLoading": {
+    "message": "Ошибка загрузки настроек"
+  },
+  "errorSelectLanguage": {
+    "message": "Пожалуйста, выберите язык"
+  },
+  "settingsSaved": {
+    "message": "✓ Настройки сохранены! Перезагрузите Netflix, чтобы применить изменения."
+  },
+  "errorSaving": {
+    "message": "✗ Ошибка сохранения настроек"
+  },
+  "resetDone": {
+    "message": "✓ Сброшено по умолчанию"
+  },
+  "errorResetting": {
+    "message": "✗ Ошибка сброса настроек"
+  }
+}
