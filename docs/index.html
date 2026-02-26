@@ -492,7 +492,7 @@
   <script>
     /**
      * Basic validation for image src attributes used in the lightbox.
-     * Only allow http/https or data:image URLs.
+     * Only allow http/https or data:image URLs with proper MIME types.
      * @param {string} src
      * @returns {boolean}
      */
@@ -500,12 +500,16 @@
       if (typeof src !== 'string') return false;
       var trimmed = src.trim();
       if (!trimmed) return false;
-      // Allow standard web URLs or data URLs for images
-      return (
-        trimmed.startsWith('https://') ||
-        trimmed.startsWith('http://') ||
-        trimmed.startsWith('data:image')
-      );
+      // Allow standard web URLs
+      if (trimmed.startsWith('https://') || trimmed.startsWith('http://')) {
+        return true;
+      }
+      // Allow data URLs for images with proper MIME types
+      if (trimmed.startsWith('data:image/')) {
+        var mimeMatch = trimmed.match(/^data:image\/(png|jpe?g|gif|webp|svg\+xml);/);
+        return mimeMatch !== null;
+      }
+      return false;
     }
 
     function openLightbox(img) {
@@ -518,15 +522,17 @@
       var lightboxImg = document.getElementById('lightbox-img');
 
       // Read raw attributes to avoid surprises from mutated properties
-      var src = img.getAttribute('src') || '';
-      var alt = img.getAttribute('alt') || '';
+      var src = img.getAttribute('src');
+      var alt = img.getAttribute('alt');
 
-      if (!isSafeImageSrc(src)) {
+      // Validate src exists and is safe
+      if (!src || !isSafeImageSrc(src)) {
         return;
       }
 
       lightboxImg.src = src;
-      lightboxImg.alt = alt;
+      // Use provided alt text or fall back to default
+      lightboxImg.alt = alt || 'Screenshot preview';
       lb.classList.add('active');
     }
     function closeLightbox() {
