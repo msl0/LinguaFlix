@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "在Netflix上学习语言——暂停即可查看所选语言的额外字幕"
+  },
+  "settingsButton": {
+    "message": "设置"
+  },
+  "settingsTitle": {
+    "message": "LinguaFlix 设置"
+  },
+  "subtitleLanguageLabel": {
+    "message": "暂停时的字幕语言："
+  },
+  "langPolish": {
+    "message": "波兰语 (Polski)"
+  },
+  "langEnglish": {
+    "message": "英语 (English)"
+  },
+  "langGerman": {
+    "message": "德语 (Deutsch)"
+  },
+  "langFrench": {
+    "message": "法语 (Français)"
+  },
+  "langSpanish": {
+    "message": "西班牙语 (Español)"
+  },
+  "langItalian": {
+    "message": "意大利语 (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "葡萄牙语 (Português)"
+  },
+  "langRussian": {
+    "message": "俄语 (Русский)"
+  },
+  "langJapanese": {
+    "message": "日语 (日本語)"
+  },
+  "langKorean": {
+    "message": "韩语 (한국어)"
+  },
+  "langChinese": {
+    "message": "中文"
+  },
+  "langTurkish": {
+    "message": "土耳其语 (Türkçe)"
+  },
+  "langDutch": {
+    "message": "荷兰语 (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "瑞典语 (Svenska)"
+  },
+  "langArabic": {
+    "message": "阿拉伯语 (العربية)"
+  },
+  "langCzech": {
+    "message": "捷克语 (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "乌克兰语 (Українська)"
+  },
+  "infoText": {
+    "message": "暂停Netflix时，您会在视频上方看到所选语言的字幕。继续播放时字幕消失，Netflix照常显示字幕"
+  },
+  "preferCC": {
+    "message": "优先使用隐藏式字幕 (CC)"
+  },
+  "ccInfoText": {
+    "message": "在可用时使用隐藏式字幕代替普通字幕"
+  },
+  "saveSettings": {
+    "message": "保存设置"
+  },
+  "resetToDefault": {
+    "message": "恢复默认"
+  },
+  "errorLoading": {
+    "message": "加载设置时出错"
+  },
+  "errorSelectLanguage": {
+    "message": "请选择一种语言"
+  },
+  "settingsSaved": {
+    "message": "✓ 设置已保存！重新加载Netflix以应用更改。"
+  },
+  "errorSaving": {
+    "message": "✗ 保存设置时出错"
+  },
+  "resetDone": {
+    "message": "✓ 已恢复默认"
+  },
+  "errorResetting": {
+    "message": "✗ 重置设置时出错"
+  }
+}

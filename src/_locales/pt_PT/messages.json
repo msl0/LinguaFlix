@@ -1,0 +1,101 @@
+{
+  "extName": {
+    "message": "LinguaFlix"
+  },
+  "extDescription": {
+    "message": "Aprenda idiomas na Netflix – pause para ver legendas adicionais no idioma escolhido"
+  },
+  "settingsButton": {
+    "message": "Configurações"
+  },
+  "settingsTitle": {
+    "message": "Configurações do LinguaFlix"
+  },
+  "subtitleLanguageLabel": {
+    "message": "Idioma das legendas ao pausar:"
+  },
+  "langPolish": {
+    "message": "Polonês (Polski)"
+  },
+  "langEnglish": {
+    "message": "Inglês (English)"
+  },
+  "langGerman": {
+    "message": "Alemão (Deutsch)"
+  },
+  "langFrench": {
+    "message": "Francês (Français)"
+  },
+  "langSpanish": {
+    "message": "Espanhol (Español)"
+  },
+  "langItalian": {
+    "message": "Italiano (Italiano)"
+  },
+  "langPortuguese": {
+    "message": "Português"
+  },
+  "langRussian": {
+    "message": "Russo (Русский)"
+  },
+  "langJapanese": {
+    "message": "Japonês (日本語)"
+  },
+  "langKorean": {
+    "message": "Coreano (한국어)"
+  },
+  "langChinese": {
+    "message": "Chinês (中文)"
+  },
+  "langTurkish": {
+    "message": "Turco (Türkçe)"
+  },
+  "langDutch": {
+    "message": "Holandês (Nederlands)"
+  },
+  "langSwedish": {
+    "message": "Sueco (Svenska)"
+  },
+  "langArabic": {
+    "message": "Árabe (العربية)"
+  },
+  "langCzech": {
+    "message": "Tcheco (Čeština)"
+  },
+  "langUkrainian": {
+    "message": "Ucraniano (Українська)"
+  },
+  "infoText": {
+    "message": "Quando você pausa a Netflix, verá as legendas no idioma escolhido sobre o vídeo. Quando retomar, elas desaparecem e a Netflix mostra as legendas como de costume"
+  },
+  "preferCC": {
+    "message": "Preferir legendas para surdos (CC)"
+  },
+  "ccInfoText": {
+    "message": "Usar legendas para surdos em vez das legendas normais quando disponíveis"
+  },
+  "saveSettings": {
+    "message": "Salvar configurações"
+  },
+  "resetToDefault": {
+    "message": "Restaurar padrão"
+  },
+  "errorLoading": {
+    "message": "Erro ao carregar configurações"
+  },
+  "errorSelectLanguage": {
+    "message": "Por favor, selecione um idioma"
+  },
+  "settingsSaved": {
+    "message": "✓ Configurações salvas! Recarregue a Netflix para aplicar as alterações."
+  },
+  "errorSaving": {
+    "message": "✗ Erro ao salvar configurações"
+  },
+  "resetDone": {
+    "message": "✓ Restaurado ao padrão"
+  },
+  "errorResetting": {
+    "message": "✗ Erro ao restaurar configurações"
+  }
+}
