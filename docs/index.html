@@ -19,7 +19,6 @@
   <meta name="twitter:image" content="https://linguaflix.marcinslowikowski.com/promo/social-preview-1280x640.png">
   <meta name="theme-color" content="#0f0f0f">
   <meta name="author" content="Marcin Słowikowski">
-  <link rel="preconnect" href="https://www.youtube.com">
   <link rel="preconnect" href="https://i.ytimg.com">
   <link rel="icon" type="image/svg+xml" href="https://linguaflix.marcinslowikowski.com/favicon.svg">
   <link rel="icon" type="image/png" sizes="48x48" href="https://linguaflix.marcinslowikowski.com/favicon-48.png">
@@ -112,7 +111,7 @@
     }
 
     .hero h1 span {
-      color: #b81d13;
+      color: #d42516;
     }
 
     .hero p {
@@ -145,6 +144,13 @@
     .cta-button svg {
       width: 22px;
       height: 22px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     /* ── Section shared ── */
@@ -317,12 +323,56 @@
       border-radius: 12px;
       overflow: hidden;
       border: 1px solid #2a2a2a;
+      position: relative;
+      cursor: pointer;
+      background: #000;
     }
 
     .video-wrapper iframe {
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    .video-wrapper .video-facade {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-wrapper .video-facade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .video-wrapper .video-play-btn {
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.6);
+      border: 3px solid rgba(255, 255, 255, 0.85);
+      transition: background 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-wrapper:hover .video-play-btn {
+      background: rgba(184, 29, 19, 0.85);
+      transform: scale(1.08);
+    }
+
+    .video-wrapper .video-play-btn::after {
+      content: '';
+      display: block;
+      border-style: solid;
+      border-width: 12px 0 12px 22px;
+      border-color: transparent transparent transparent #fff;
+      margin-left: 4px;
     }
 
     /* ── Install CTA ── */
@@ -349,7 +399,7 @@
       border-top: 1px solid #1a1a1a;
       text-align: center;
       padding: 32px 24px;
-      color: #666;
+      color: #808080;
       font-size: 0.85rem;
     }
 
@@ -435,10 +485,16 @@
     </svg>
     <h1>Lingua<span>Flix</span></h1>
     <p>Show secondary subtitles in your language when you pause Netflix. The easiest way to learn languages with Netflix — get dual subtitles with a free Chrome extension.</p>
-    <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-      Add to Chrome — It's Free
-    </a>
+    <div class="cta-buttons">
+      <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+        Add to Chrome
+      </a>
+      <a class="cta-button" href="https://microsoftedge.microsoft.com/addons/detail/linguaflix/jlldpadnheggflcjmikklpepdkojglaa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.86 17.86q.14 0 .25.12.1.13.1.25t-.11.33l-.32.46q-.43.58-1.15 1.13a7.856 7.856 0 0 1-1.91 1.15q-.46.21-1.06.47-.6.26-1.33.3-.73.02-1.52-.16a7.3 7.3 0 0 1-1.63-.7 8.04 8.04 0 0 1-1.4-1.06q-.64-.61-1.1-1.29-.45-.68-.71-1.43a4.93 4.93 0 0 1-.26-1.58q0-1.5.76-2.89a8.08 8.08 0 0 1 1.93-2.47 10.35 10.35 0 0 1 2.66-1.77q1.44-.68 2.82-.94a8.19 8.19 0 0 0-.48 1.23q-.18.65-.27 1.18-.1.53-.1.93v.3q0 .79.2 1.56.2.77.6 1.44.39.67.97 1.2.58.54 1.36.87.77.33 1.76.33h.06q.24 0 .49-.06.24-.05.51-.14.27-.1.42-.15Zm-8.27-7.1q0-.09.02-.14.01-.06.02-.15-1.07.07-2.26.5a8.26 8.26 0 0 0-2.25 1.3 7.08 7.08 0 0 0-1.69 1.98q-.66 1.13-.66 2.46 0 .74.2 1.47.2.72.63 1.36.43.63 1.07 1.12.65.48 1.54.72.89.25 2.04.08a8.75 8.75 0 0 1-1.7-1.55q-.71-.86-1.13-1.82a5.03 5.03 0 0 1-.42-2.02q0-.64.14-1.34.13-.7.43-1.38.3-.69.78-1.26.47-.57 1.13-.96.11-.07.11-.12a.09.09 0 0 0-.02-.06.52.52 0 0 0-.05-.07q-.04-.05-.04-.11l.02-.02h.08ZM8.5 4.38q0-.07.13-.26.12-.2.34-.42.23-.22.54-.44.3-.21.67-.35.38-.15.78-.15.44 0 .87.19.42.2.72.5.31.31.5.66.2.35.2.6 0 .47-.26.86-.26.4-.6.65l-.37.27q-.42.29-.82.66-.4.38-.7.83a3.4 3.4 0 0 0-.45.96q-.15.51-.15 1.04 0-.02-.03-.17-.02-.15-.07-.37-.05-.21-.14-.43-.1-.22-.22-.42-.12-.2-.3-.34a.63.63 0 0 0-.38-.14q-.37 0-.74.27-.37.28-.65.68a4.4 4.4 0 0 0-.45.83q-.18.44-.22.74l-.01.07q-.3 1.17-.3 2.35 0 1.06.36 2.07a8.27 8.27 0 0 0 2.24 3.34q-.89-.36-1.69-.94a8 8 0 0 1-1.37-1.3 8.73 8.73 0 0 1-1.04-1.56 8.79 8.79 0 0 1-.87-3.07q-.07-.57-.07-1.14 0-1.23.37-2.38a8.7 8.7 0 0 1 1.01-2.15 8.68 8.68 0 0 1 1.49-1.78A7.7 7.7 0 0 1 8.5 4.38Z"/></svg>
+        Add to Edge
+      </a>
+    </div>
   </div>
 
   <!-- How it works -->
@@ -495,11 +551,17 @@
     <h2 class="section-title">See It in Action</h2>
     <div class="screenshots">
       <figure>
-        <img class="lightbox-trigger" src="screenshots/1-1280x800.jpg" alt="LinguaFlix showing Polish subtitle overlay on Stranger Things" loading="lazy" width="1280" height="800" tabindex="0" role="button" aria-label="Open full-size screenshot of Polish subtitle overlay on Stranger Things">
+        <picture>
+          <source srcset="screenshots/1-1280x800.webp" type="image/webp">
+          <img class="lightbox-trigger" src="screenshots/1-1280x800.jpg" alt="LinguaFlix showing Polish subtitle overlay on Stranger Things" loading="lazy" width="1280" height="800" tabindex="0" role="button" aria-label="Open full-size screenshot of Polish subtitle overlay on Stranger Things">
+        </picture>
         <figcaption>Polish subtitle overlay on Stranger Things — original English subtitle stays at the bottom</figcaption>
       </figure>
       <figure>
-        <img class="lightbox-trigger" src="screenshots/3-1280x800.png" alt="LinguaFlix showing Spanish subtitle overlay on The Walking Dead" loading="lazy" width="1280" height="800" tabindex="0" role="button" aria-label="Open full-size screenshot of Spanish subtitle overlay on The Walking Dead">
+        <picture>
+          <source srcset="screenshots/3-1280x800.webp" type="image/webp">
+          <img class="lightbox-trigger" src="screenshots/3-1280x800.png" alt="LinguaFlix showing Spanish subtitle overlay on The Walking Dead" loading="lazy" width="1280" height="800" tabindex="0" role="button" aria-label="Open full-size screenshot of Spanish subtitle overlay on The Walking Dead">
+        </picture>
         <figcaption>Spanish subtitle overlay on The Walking Dead</figcaption>
       </figure>
     </div>
@@ -513,14 +575,11 @@
   <!-- Video -->
   <section>
     <h2 class="section-title">Watch the Demo</h2>
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/52YYRb15R0w"
-        title="LinguaFlix — Setup &amp; Demo | Learn Languages on Netflix"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen
-      ></iframe>
+    <div class="video-wrapper" id="video-demo" onclick="loadVideo()" role="button" tabindex="0" aria-label="Play demo video: LinguaFlix — Setup and Demo">
+      <div class="video-facade">
+        <img src="https://i.ytimg.com/vi/52YYRb15R0w/maxresdefault.jpg" alt="LinguaFlix demo video thumbnail" loading="lazy" width="1280" height="720">
+        <div class="video-play-btn" aria-hidden="true"></div>
+      </div>
     </div>
   </section>
 
@@ -528,10 +587,16 @@
   <div class="install-cta">
     <h2>Start Learning with Netflix Today</h2>
     <p>Free and open source. Takes 2 seconds to install.</p>
-    <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-      Add to Chrome — It's Free
-    </a>
+    <div class="cta-buttons">
+      <a class="cta-button" href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+        Add to Chrome
+      </a>
+      <a class="cta-button" href="https://microsoftedge.microsoft.com/addons/detail/linguaflix/jlldpadnheggflcjmikklpepdkojglaa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.86 17.86q.14 0 .25.12.1.13.1.25t-.11.33l-.32.46q-.43.58-1.15 1.13a7.856 7.856 0 0 1-1.91 1.15q-.46.21-1.06.47-.6.26-1.33.3-.73.02-1.52-.16a7.3 7.3 0 0 1-1.63-.7 8.04 8.04 0 0 1-1.4-1.06q-.64-.61-1.1-1.29-.45-.68-.71-1.43a4.93 4.93 0 0 1-.26-1.58q0-1.5.76-2.89a8.08 8.08 0 0 1 1.93-2.47 10.35 10.35 0 0 1 2.66-1.77q1.44-.68 2.82-.94a8.19 8.19 0 0 0-.48 1.23q-.18.65-.27 1.18-.1.53-.1.93v.3q0 .79.2 1.56.2.77.6 1.44.39.67.97 1.2.58.54 1.36.87.77.33 1.76.33h.06q.24 0 .49-.06.24-.05.51-.14.27-.1.42-.15Zm-8.27-7.1q0-.09.02-.14.01-.06.02-.15-1.07.07-2.26.5a8.26 8.26 0 0 0-2.25 1.3 7.08 7.08 0 0 0-1.69 1.98q-.66 1.13-.66 2.46 0 .74.2 1.47.2.72.63 1.36.43.63 1.07 1.12.65.48 1.54.72.89.25 2.04.08a8.75 8.75 0 0 1-1.7-1.55q-.71-.86-1.13-1.82a5.03 5.03 0 0 1-.42-2.02q0-.64.14-1.34.13-.7.43-1.38.3-.69.78-1.26.47-.57 1.13-.96.11-.07.11-.12a.09.09 0 0 0-.02-.06.52.52 0 0 0-.05-.07q-.04-.05-.04-.11l.02-.02h.08ZM8.5 4.38q0-.07.13-.26.12-.2.34-.42.23-.22.54-.44.3-.21.67-.35.38-.15.78-.15.44 0 .87.19.42.2.72.5.31.31.5.66.2.35.2.6 0 .47-.26.86-.26.4-.6.65l-.37.27q-.42.29-.82.66-.4.38-.7.83a3.4 3.4 0 0 0-.45.96q-.15.51-.15 1.04 0-.02-.03-.17-.02-.15-.07-.37-.05-.21-.14-.43-.1-.22-.22-.42-.12-.2-.3-.34a.63.63 0 0 0-.38-.14q-.37 0-.74.27-.37.28-.65.68a4.4 4.4 0 0 0-.45.83q-.18.44-.22.74l-.01.07q-.3 1.17-.3 2.35 0 1.06.36 2.07a8.27 8.27 0 0 0 2.24 3.34q-.89-.36-1.69-.94a8 8 0 0 1-1.37-1.3 8.73 8.73 0 0 1-1.04-1.56 8.79 8.79 0 0 1-.87-3.07q-.07-.57-.07-1.14 0-1.23.37-2.38a8.7 8.7 0 0 1 1.01-2.15 8.68 8.68 0 0 1 1.49-1.78A7.7 7.7 0 0 1 8.5 4.38Z"/></svg>
+        Add to Edge
+      </a>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -539,11 +604,29 @@
     <div class="footer-links">
       <a href="https://github.com/msl0/LinguaFlix" target="_blank" rel="noopener">GitHub</a>
       <a href="https://chromewebstore.google.com/detail/linguaflix/bllbooanjfhngljkndcaehbojpdhooka" target="_blank" rel="noopener">Chrome Web Store</a>
+      <a href="https://microsoftedge.microsoft.com/addons/detail/linguaflix/jlldpadnheggflcjmikklpepdkojglaa" target="_blank" rel="noopener">Edge Add-ons</a>
     </div>
-    <p>Built by Marcin Słowikowski</p>
+    <p>Built by <a href="https://www.linkedin.com/in/marcin-s%C5%82owikowski/" target="_blank" rel="noopener">Marcin Słowikowski</a></p>
   </footer>
 
   <script>
+    function loadVideo() {
+      var wrapper = document.getElementById('video-demo');
+      if (wrapper.dataset.loaded) return;
+      wrapper.dataset.loaded = '1';
+      wrapper.removeAttribute('role');
+      wrapper.removeAttribute('tabindex');
+      wrapper.removeAttribute('aria-label');
+      wrapper.style.cursor = 'default';
+      wrapper.innerHTML = '<iframe src="https://www.youtube.com/embed/52YYRb15R0w?autoplay=1" title="LinguaFlix — Setup &amp; Demo | Learn Languages on Netflix" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>';
+    }
+    document.addEventListener('keydown', function(e) {
+      if ((e.key === 'Enter' || e.key === ' ') && document.activeElement === document.getElementById('video-demo')) {
+        e.preventDefault();
+        loadVideo();
+      }
+    });
+
     /**
      * Basic validation for image src attributes used in the lightbox.
      * Only allow http/https or data:image URLs with proper MIME types.
