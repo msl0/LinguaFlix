@@ -1,0 +1,55 @@
+<svg width="1280" height="640" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#b81d13" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#b81d13" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- Subtle glow -->
+  <rect width="1280" height="640" fill="url(#glow)"/>
+
+  <!-- Thin border for definition on light backgrounds -->
+  <rect x="0.5" y="0.5" width="1279" height="639" rx="0" fill="none" stroke="#333" stroke-width="1"/>
+
+  <!-- === ICON (centered, play triangle + subtitle bars) === -->
+  <g transform="translate(584, 72)">
+    <rect width="112" height="112" rx="22" fill="#0f0f0f"/>
+    <polygon points="32,16 32,54 80,35" fill="#b81d13"/>
+    <rect x="14" y="74" width="84" height="10" rx="5" fill="#b81d13"/>
+    <rect x="14" y="90" width="84" height="10" rx="5" fill="#b81d13"/>
+  </g>
+
+  <!-- === NAME === -->
+  <text x="640" y="270" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+        font-size="82" font-weight="700" letter-spacing="-1" fill="#ffffff">
+    LinguaFlix
+  </text>
+
+  <!-- === DIVIDER LINE === -->
+  <line x1="380" y1="300" x2="900" y2="300" stroke="#b81d13" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- === TAGLINE === -->
+  <text x="640" y="358" text-anchor="middle"
+        font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif"
+        font-size="36" font-weight="400" letter-spacing="4" fill="#999999">
+    PAUSE. LEARN. PLAY.
+  </text>
+
+  <!-- === VISUAL HINT: two subtitle-style bars at bottom === -->
+  <g opacity="0.35">
+    <rect x="300" y="440" width="680" height="18" rx="9" fill="#b81d13"/>
+    <rect x="380" y="474" width="520" height="18" rx="9" fill="#b81d13"/>
+  </g>
+
+  <!-- === BOTTOM ACCENT: thin red line === -->
+  <rect x="0" y="626" width="1280" height="14" fill="#b81d13" opacity="0.8"/>
+</svg>
